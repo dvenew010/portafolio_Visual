@@ -24,6 +24,8 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtt1 = New System.Windows.Forms.TextBox()
         Me.txt1 = New System.Windows.Forms.MaskedTextBox()
         Me.cb3 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -56,8 +58,6 @@ Partial Class Form2
         Me.bt_elim = New System.Windows.Forms.Button()
         Me.bt_grabar = New System.Windows.Forms.Button()
         Me.tx_fe = New System.Windows.Forms.TextBox()
-        Me.txtt1 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -93,6 +93,22 @@ Partial Class Form2
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(400, 355)
         Me.Panel1.TabIndex = 1
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(173, 15)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(10, 13)
+        Me.Label13.TabIndex = 23
+        Me.Label13.Text = "-"
+        '
+        'txtt1
+        '
+        Me.txtt1.Location = New System.Drawing.Point(183, 11)
+        Me.txtt1.Name = "txtt1"
+        Me.txtt1.Size = New System.Drawing.Size(16, 20)
+        Me.txtt1.TabIndex = 22
         '
         'txt1
         '
@@ -385,22 +401,6 @@ Partial Class Form2
         Me.tx_fe.Name = "tx_fe"
         Me.tx_fe.Size = New System.Drawing.Size(101, 13)
         Me.tx_fe.TabIndex = 6
-        '
-        'txtt1
-        '
-        Me.txtt1.Location = New System.Drawing.Point(183, 11)
-        Me.txtt1.Name = "txtt1"
-        Me.txtt1.Size = New System.Drawing.Size(16, 20)
-        Me.txtt1.TabIndex = 22
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(173, 15)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(10, 13)
-        Me.Label13.TabIndex = 23
-        Me.Label13.Text = "-"
         '
         'Form2
         '

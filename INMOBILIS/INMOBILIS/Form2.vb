@@ -446,6 +446,12 @@
     Private Sub txtt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtt1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If txtt1.Text = "k" Or txtt1.Text = "0" Or txtt1.Text = "1" Or txtt1.Text = "2" Or txtt1.Text = "3" Or txtt1.Text = "4" Or txtt1.Text = "5" Or txtt1.Text = "6" Or txtt1.Text = "7" Or txtt1.Text = "8" Or txtt1.Text = "9" Then
+                valida_rut(txt1.Text, txtt1.Text)
+                If sw_val = 1 Then
+                    txtt1.Text = ""
+                    txtt1.Focus()
+                    Exit Sub
+                End If
                 txt2.Focus()
             Else
                 MsgBox("Dato no valido", 16, "Error de ingreso")
@@ -523,33 +529,6 @@
     End Sub
 
 
-    'Sub Validar_Rut(ByVal Rut As String)
-    '    Dim DIGITO As Integer
-    '    Dim indice As Integer
-    '    Dim Factor As Integer
-    '    Dim Suma As Integer
-
-    '    Suma = 0
-    '    Factor = 2
-
-    '    For indice = Len(Rut) To 1 Step -1
-    '        Suma = Suma + Val(Mid(Rut, indice, 1)) * Factor
-    '        Factor = Factor + 1
-    '        If Factor > 7 Then Factor = 2
-    '    Next indice
-
-    '    DIGITO = 11 - (Suma Mod 11)
-
-    '    Select Case DIGITO
-    '        Case 10
-    '            Gl_Digrut = "K"
-    '        Case 11
-    '            Gl_Digrut = "0"
-    '        Case Else
-    '            Gl_Digrut = Trim$(Str$(DIGITO))
-    '    End Select
-    'End Sub
-
 
 
 
@@ -592,5 +571,45 @@
             End If
         End If
     End Sub
+    Private Sub valida_rut(ByVal mmm As Integer, ByVal dv As String)
+        Dim rut As Integer
+        Dim digito As String
+        Dim contarnumerodeauno As Integer
+        Dim contar As Integer
+        Dim acumulador As Integer
+        Dim division As Integer
+        Dim dig As Integer
+        Dim dig2 As String
 
+        contar = 2
+        rut = txt1.Text
+        digito = txtt1.Text
+        Do While rut <> 0
+            contarnumerodeauno = (rut Mod 10) * contar
+            acumulador = acumulador + contarnumerodeauno
+            rut = rut \ 10
+            contar = contar + 1
+            If contar = 8 Then
+                contar = 2
+            End If
+        Loop
+        division = acumulador Mod 11
+        If division = 0 Then
+            division = 11
+        End If
+        dig = 11 - division
+        dig2 = CStr(dig)
+
+        If dig2 = 10 Then
+            dig2 = "k"
+        End If
+
+        If dig2 = digito Then
+            sw_val = 0
+        Else
+            MsgBox(" Error: El Digito Verificador no es Correcto  ")
+            sw_val = 1
+        End If
+
+    End Sub
 End Class
