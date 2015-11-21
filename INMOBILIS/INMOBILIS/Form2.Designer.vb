@@ -22,9 +22,9 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt1 = New System.Windows.Forms.MaskedTextBox()
         Me.cb3 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txt5 = New System.Windows.Forms.MaskedTextBox()
@@ -36,7 +36,6 @@ Partial Class Form2
         Me.txt4 = New System.Windows.Forms.TextBox()
         Me.txt3 = New System.Windows.Forms.TextBox()
         Me.txt2 = New System.Windows.Forms.TextBox()
-        Me.txt1 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -56,8 +55,9 @@ Partial Class Form2
         Me.bt_edit = New System.Windows.Forms.Button()
         Me.bt_elim = New System.Windows.Forms.Button()
         Me.bt_grabar = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.tx_fe = New System.Windows.Forms.TextBox()
+        Me.txtt1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -65,6 +65,9 @@ Partial Class Form2
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.txtt1)
+        Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Controls.Add(Me.cb3)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.txt5)
@@ -76,7 +79,6 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.txt4)
         Me.Panel1.Controls.Add(Me.txt3)
         Me.Panel1.Controls.Add(Me.txt2)
-        Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -91,6 +93,14 @@ Partial Class Form2
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(400, 355)
         Me.Panel1.TabIndex = 1
+        '
+        'txt1
+        '
+        Me.txt1.Location = New System.Drawing.Point(106, 11)
+        Me.txt1.Mask = "00,000,000"
+        Me.txt1.Name = "txt1"
+        Me.txt1.Size = New System.Drawing.Size(66, 20)
+        Me.txt1.TabIndex = 1
         '
         'cb3
         '
@@ -178,13 +188,6 @@ Partial Class Form2
         Me.txt2.Name = "txt2"
         Me.txt2.Size = New System.Drawing.Size(182, 20)
         Me.txt2.TabIndex = 11
-        '
-        'txt1
-        '
-        Me.txt1.Location = New System.Drawing.Point(106, 11)
-        Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(94, 20)
-        Me.txt1.TabIndex = 10
         '
         'Label10
         '
@@ -374,10 +377,6 @@ Partial Class Form2
         Me.bt_grabar.Text = "GRABAR"
         Me.bt_grabar.UseVisualStyleBackColor = True
         '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
         'tx_fe
         '
         Me.tx_fe.BackColor = System.Drawing.SystemColors.MenuBar
@@ -386,6 +385,22 @@ Partial Class Form2
         Me.tx_fe.Name = "tx_fe"
         Me.tx_fe.Size = New System.Drawing.Size(101, 13)
         Me.tx_fe.TabIndex = 6
+        '
+        'txtt1
+        '
+        Me.txtt1.Location = New System.Drawing.Point(183, 11)
+        Me.txtt1.Name = "txtt1"
+        Me.txtt1.Size = New System.Drawing.Size(16, 20)
+        Me.txtt1.TabIndex = 22
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(173, 15)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(10, 13)
+        Me.Label13.TabIndex = 23
+        Me.Label13.Text = "-"
         '
         'Form2
         '
@@ -421,7 +436,6 @@ Partial Class Form2
     Friend WithEvents txt4 As System.Windows.Forms.TextBox
     Friend WithEvents txt3 As System.Windows.Forms.TextBox
     Friend WithEvents txt2 As System.Windows.Forms.TextBox
-    Friend WithEvents txt1 As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
@@ -443,6 +457,8 @@ Partial Class Form2
     Friend WithEvents bt_anu As System.Windows.Forms.Button
     Friend WithEvents cb3 As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents tx_fe As System.Windows.Forms.TextBox
+    Friend WithEvents txt1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents txtt1 As System.Windows.Forms.TextBox
 End Class

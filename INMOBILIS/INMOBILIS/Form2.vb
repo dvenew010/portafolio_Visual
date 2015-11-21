@@ -1,4 +1,6 @@
 ﻿Public Class Form2
+    Dim sw_val As Integer
+    Dim fecha As Date
 
     
     
@@ -423,15 +425,33 @@
         cb3.Items.Add("XIII AISÉN")
         cb3.Items.Add("XIV MAGALLANES")
         cb3.Items.Add("XV METROPOLITANA")
-        Timer1.Start()
 
+        fecha = Format(Now(), "short date")
+        tx_fe.Text = fecha
+        txt1.Focus()
 
 
     End Sub
 
     Private Sub txt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            txt2.Focus()
+            If txt1.Text = "" Or txt1.Text = "__.___.___" Then
+                MsgBox("El campo esta vacio", 16, "Error de ingreso")
+                txt1.Focus()
+            Else
+                txtt1.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub txtt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtt1.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            If txtt1.Text = "k" Or txtt1.Text = "0" Or txtt1.Text = "1" Or txtt1.Text = "2" Or txtt1.Text = "3" Or txtt1.Text = "4" Or txtt1.Text = "5" Or txtt1.Text = "6" Or txtt1.Text = "7" Or txtt1.Text = "8" Or txtt1.Text = "9" Then
+                txt2.Focus()
+            Else
+                MsgBox("Dato no valido", 16, "Error de ingreso")
+                txtt1.Text = ""
+                txtt1.Focus()
+            End If
         End If
     End Sub
     Private Sub txt2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2.KeyPress
@@ -451,6 +471,16 @@
     End Sub
     Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            If txt5.Text <> "00-00-0000" Then
+                Valida_Fecha(txt5.Text)
+                If sw_val = 1 Then
+                    txt5.Text = ""
+                    txt5.Focus()
+                    Exit Sub
+                End If
+            Else
+                txt5.Text = "00-00-0000"
+            End If
             cb1.Focus()
         End If
     End Sub
@@ -493,7 +523,74 @@
     End Sub
 
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        tx_fe.Text = Format(Now, "dd/mm/yyyy")
+    'Sub Validar_Rut(ByVal Rut As String)
+    '    Dim DIGITO As Integer
+    '    Dim indice As Integer
+    '    Dim Factor As Integer
+    '    Dim Suma As Integer
+
+    '    Suma = 0
+    '    Factor = 2
+
+    '    For indice = Len(Rut) To 1 Step -1
+    '        Suma = Suma + Val(Mid(Rut, indice, 1)) * Factor
+    '        Factor = Factor + 1
+    '        If Factor > 7 Then Factor = 2
+    '    Next indice
+
+    '    DIGITO = 11 - (Suma Mod 11)
+
+    '    Select Case DIGITO
+    '        Case 10
+    '            Gl_Digrut = "K"
+    '        Case 11
+    '            Gl_Digrut = "0"
+    '        Case Else
+    '            Gl_Digrut = Trim$(Str$(DIGITO))
+    '    End Select
+    'End Sub
+
+
+
+
+    Private Sub Valida_Fecha(ByVal fecha As String)
+        Dim vdia, vmes, vano As Integer
+
+        vdia = Val(Mid(fecha, 1, 2))
+        vmes = Val(Mid(fecha, 4, 2))
+        vano = Val(Mid(fecha, 7, 4))
+        sw_val = 0
+        If fecha = "__-__-____" Then
+            sw_val = 1
+            Exit Sub
+        End If
+        If vdia > 31 Or vmes > 12 Or vano < 1900 Or vano > 1997 Or vdia < 1 Or vmes < 1 Then
+            sw_val = 1
+            MsgBox("La fecha no es válida", 16, "Error de ingreso")
+        End If
+        If sw_val = 0 Then
+            If (vmes = 1 Or vmes = 3 Or vmes = 5 Or vmes = 7 Or vmes = 8 Or vmes = 10 Or vmes = 12) And vdia > 31 Then
+                sw_val = 1
+                MsgBox("La fecha no es válida", 16, "Error de ingreso")
+            End If
+            If (vmes = 4 Or vmes = 6 Or vmes = 9 Or vmes = 11) And vdia > 30 Then
+                sw_val = 1
+                MsgBox("La fecha no es válida", 16, "Error de ingreso")
+            End If
+            If vmes = 2 Then
+                If vano \ 4 = vano / 4 Then
+                    If vdia > 29 Then
+                        sw_val = 1
+                        MsgBox("La fecha no es válida", 16, "Error de ingreso")
+                    End If
+                Else
+                    If vdia > 28 Then
+                        sw_val = 1
+                        MsgBox("La fecha no es válida", 16, "Error de ingreso")
+                    End If
+                End If
+            End If
+        End If
     End Sub
+
 End Class
