@@ -108,7 +108,7 @@ Partial Class Form2
         Me.txtt1.Location = New System.Drawing.Point(183, 11)
         Me.txtt1.Name = "txtt1"
         Me.txtt1.Size = New System.Drawing.Size(16, 20)
-        Me.txtt1.TabIndex = 22
+        Me.txtt1.TabIndex = 2
         '
         'txt1
         '
@@ -124,7 +124,7 @@ Partial Class Form2
         Me.cb3.Location = New System.Drawing.Point(106, 221)
         Me.cb3.Name = "cb3"
         Me.cb3.Size = New System.Drawing.Size(182, 21)
-        Me.cb3.TabIndex = 21
+        Me.cb3.TabIndex = 9
         '
         'Label12
         '
@@ -142,7 +142,7 @@ Partial Class Form2
         Me.txt5.Mask = "00/00/0000"
         Me.txt5.Name = "txt5"
         Me.txt5.Size = New System.Drawing.Size(100, 20)
-        Me.txt5.TabIndex = 19
+        Me.txt5.TabIndex = 6
         Me.txt5.ValidatingType = GetType(Date)
         '
         'cb2
@@ -151,7 +151,7 @@ Partial Class Form2
         Me.cb2.Location = New System.Drawing.Point(106, 252)
         Me.cb2.Name = "cb2"
         Me.cb2.Size = New System.Drawing.Size(182, 21)
-        Me.cb2.TabIndex = 18
+        Me.cb2.TabIndex = 10
         '
         'cb1
         '
@@ -161,49 +161,49 @@ Partial Class Form2
         Me.cb1.Location = New System.Drawing.Point(106, 160)
         Me.cb1.Name = "cb1"
         Me.cb1.Size = New System.Drawing.Size(53, 21)
-        Me.cb1.TabIndex = 17
+        Me.cb1.TabIndex = 7
         '
         'txt8
         '
         Me.txt8.Location = New System.Drawing.Point(106, 313)
         Me.txt8.Name = "txt8"
         Me.txt8.Size = New System.Drawing.Size(94, 20)
-        Me.txt8.TabIndex = 16
+        Me.txt8.TabIndex = 12
         '
         'txt7
         '
         Me.txt7.Location = New System.Drawing.Point(106, 283)
         Me.txt7.Name = "txt7"
         Me.txt7.Size = New System.Drawing.Size(182, 20)
-        Me.txt7.TabIndex = 15
+        Me.txt7.TabIndex = 11
         '
         'txt6
         '
         Me.txt6.Location = New System.Drawing.Point(106, 191)
         Me.txt6.Name = "txt6"
         Me.txt6.Size = New System.Drawing.Size(182, 20)
-        Me.txt6.TabIndex = 14
+        Me.txt6.TabIndex = 8
         '
         'txt4
         '
         Me.txt4.Location = New System.Drawing.Point(162, 101)
         Me.txt4.Name = "txt4"
         Me.txt4.Size = New System.Drawing.Size(175, 20)
-        Me.txt4.TabIndex = 13
+        Me.txt4.TabIndex = 5
         '
         'txt3
         '
         Me.txt3.Location = New System.Drawing.Point(162, 71)
         Me.txt3.Name = "txt3"
         Me.txt3.Size = New System.Drawing.Size(175, 20)
-        Me.txt3.TabIndex = 12
+        Me.txt3.TabIndex = 4
         '
         'txt2
         '
         Me.txt2.Location = New System.Drawing.Point(106, 41)
         Me.txt2.Name = "txt2"
         Me.txt2.Size = New System.Drawing.Size(182, 20)
-        Me.txt2.TabIndex = 11
+        Me.txt2.TabIndex = 3
         '
         'Label10
         '
@@ -389,7 +389,7 @@ Partial Class Form2
         Me.bt_grabar.Location = New System.Drawing.Point(21, 19)
         Me.bt_grabar.Name = "bt_grabar"
         Me.bt_grabar.Size = New System.Drawing.Size(81, 42)
-        Me.bt_grabar.TabIndex = 0
+        Me.bt_grabar.TabIndex = 13
         Me.bt_grabar.Text = "GRABAR"
         Me.bt_grabar.UseVisualStyleBackColor = True
         '

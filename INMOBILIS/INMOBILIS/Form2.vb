@@ -410,6 +410,7 @@
 
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Limpiar_campos()
         cb3.Items.Add("I ARICA Y PARINACOTA")
         cb3.Items.Add("II TARAPACÁ")
         cb3.Items.Add("III ANTOFAGASTA")
@@ -518,10 +519,10 @@
     End Sub
     Private Sub txt8_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt8.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            If Not IsNumeric(txt1.Text) Then
+            If Not IsNumeric(txt8.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
-                txt1.Text = ""
-                txt1.Focus()
+                txt8.Text = ""
+                txt8.Focus()
             Else
                 bt_grabar.Focus()
             End If
@@ -612,4 +613,5 @@
         End If
 
     End Sub
+
 End Class

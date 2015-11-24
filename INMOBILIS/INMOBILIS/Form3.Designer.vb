@@ -27,15 +27,15 @@ Partial Class Form3
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt1 = New System.Windows.Forms.TextBox()
+        Me.txt5 = New System.Windows.Forms.MaskedTextBox()
         Me.cbp_op = New System.Windows.Forms.ComboBox()
         Me.cbp_reg = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.cbp_tip = New System.Windows.Forms.ComboBox()
-        Me.txt5 = New System.Windows.Forms.MaskedTextBox()
         Me.cbp_com = New System.Windows.Forms.ComboBox()
         Me.txt4 = New System.Windows.Forms.TextBox()
         Me.txt3 = New System.Windows.Forms.TextBox()
-        Me.txt1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -112,15 +112,15 @@ Partial Class Form3
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txt1)
+        Me.Panel1.Controls.Add(Me.txt5)
         Me.Panel1.Controls.Add(Me.cbp_op)
         Me.Panel1.Controls.Add(Me.cbp_reg)
         Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.cbp_tip)
-        Me.Panel1.Controls.Add(Me.txt5)
         Me.Panel1.Controls.Add(Me.cbp_com)
         Me.Panel1.Controls.Add(Me.txt4)
         Me.Panel1.Controls.Add(Me.txt3)
-        Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -133,6 +133,22 @@ Partial Class Form3
         Me.Panel1.Size = New System.Drawing.Size(496, 242)
         Me.Panel1.TabIndex = 6
         '
+        'txt1
+        '
+        Me.txt1.Location = New System.Drawing.Point(155, 7)
+        Me.txt1.Name = "txt1"
+        Me.txt1.Size = New System.Drawing.Size(145, 20)
+        Me.txt1.TabIndex = 1
+        '
+        'txt5
+        '
+        Me.txt5.Location = New System.Drawing.Point(155, 161)
+        Me.txt5.Mask = "000.000.000.000"
+        Me.txt5.Name = "txt5"
+        Me.txt5.Size = New System.Drawing.Size(97, 20)
+        Me.txt5.TabIndex = 27
+        Me.txt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'cbp_op
         '
         Me.cbp_op.BackColor = System.Drawing.Color.White
@@ -140,7 +156,7 @@ Partial Class Form3
         Me.cbp_op.Location = New System.Drawing.Point(155, 190)
         Me.cbp_op.Name = "cbp_op"
         Me.cbp_op.Size = New System.Drawing.Size(100, 21)
-        Me.cbp_op.TabIndex = 28
+        Me.cbp_op.TabIndex = 7
         '
         'cbp_reg
         '
@@ -148,7 +164,7 @@ Partial Class Form3
         Me.cbp_reg.Location = New System.Drawing.Point(155, 37)
         Me.cbp_reg.Name = "cbp_reg"
         Me.cbp_reg.Size = New System.Drawing.Size(182, 21)
-        Me.cbp_reg.TabIndex = 27
+        Me.cbp_reg.TabIndex = 2
         '
         'Label19
         '
@@ -166,14 +182,7 @@ Partial Class Form3
         Me.cbp_tip.Location = New System.Drawing.Point(155, 220)
         Me.cbp_tip.Name = "cbp_tip"
         Me.cbp_tip.Size = New System.Drawing.Size(175, 21)
-        Me.cbp_tip.TabIndex = 20
-        '
-        'txt5
-        '
-        Me.txt5.Location = New System.Drawing.Point(155, 161)
-        Me.txt5.Name = "txt5"
-        Me.txt5.Size = New System.Drawing.Size(100, 20)
-        Me.txt5.TabIndex = 19
+        Me.cbp_tip.TabIndex = 8
         '
         'cbp_com
         '
@@ -181,28 +190,21 @@ Partial Class Form3
         Me.cbp_com.Location = New System.Drawing.Point(155, 70)
         Me.cbp_com.Name = "cbp_com"
         Me.cbp_com.Size = New System.Drawing.Size(182, 21)
-        Me.cbp_com.TabIndex = 18
+        Me.cbp_com.TabIndex = 3
         '
         'txt4
         '
         Me.txt4.Location = New System.Drawing.Point(155, 131)
         Me.txt4.Name = "txt4"
         Me.txt4.Size = New System.Drawing.Size(175, 20)
-        Me.txt4.TabIndex = 13
+        Me.txt4.TabIndex = 5
         '
         'txt3
         '
         Me.txt3.Location = New System.Drawing.Point(155, 101)
         Me.txt3.Name = "txt3"
         Me.txt3.Size = New System.Drawing.Size(175, 20)
-        Me.txt3.TabIndex = 12
-        '
-        'txt1
-        '
-        Me.txt1.Location = New System.Drawing.Point(155, 11)
-        Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(94, 20)
-        Me.txt1.TabIndex = 10
+        Me.txt3.TabIndex = 4
         '
         'Label7
         '
@@ -557,7 +559,7 @@ Partial Class Form3
         Me.bt_grab.Location = New System.Drawing.Point(21, 19)
         Me.bt_grab.Name = "bt_grab"
         Me.bt_grab.Size = New System.Drawing.Size(81, 42)
-        Me.bt_grab.TabIndex = 0
+        Me.bt_grab.TabIndex = 9
         Me.bt_grab.Text = "GRABAR"
         Me.bt_grab.UseVisualStyleBackColor = True
         '
@@ -576,7 +578,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Location = New System.Drawing.Point(50, 50)
+        Me.Location = New System.Drawing.Point(50, 100)
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Form3"
@@ -602,11 +604,9 @@ Partial Class Form3
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents txt5 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cbp_com As System.Windows.Forms.ComboBox
     Friend WithEvents txt4 As System.Windows.Forms.TextBox
     Friend WithEvents txt3 As System.Windows.Forms.TextBox
-    Friend WithEvents txt1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -649,4 +649,6 @@ Partial Class Form3
     Friend WithEvents cbp_reg As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents cbp_op As System.Windows.Forms.ComboBox
+    Friend WithEvents txt5 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt1 As System.Windows.Forms.TextBox
 End Class

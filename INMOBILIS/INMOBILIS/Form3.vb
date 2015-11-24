@@ -435,7 +435,7 @@
     End Sub
 
     'enter
-    Private Sub txt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
+    Private Sub txt1_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt1.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -467,7 +467,7 @@
             txt5.Focus()
         End If
     End Sub
-    Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
+    Private Sub txt5_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cbp_op.Focus()
         End If
@@ -647,4 +647,7 @@
         pca.Visible = False
         ped.Visible = False
     End Sub
+
+    
+
 End Class
