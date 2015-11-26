@@ -1,57 +1,25 @@
-﻿Public Class Form3
+﻿Public Class Propiedad
+    Dim sw_val As Integer
+    Dim fecha As Date
 
-    Private Sub Form3_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    
 
-        'posicion de los paneles
-        pbo.Left = 12
-        pbo.Top = 390
-        pbo.Visible = False
 
-        pes.Left = 12
-        pes.Top = 390
-        pes.Visible = False
+    Private Sub Limpiar_campos()
+        txt1.Text = ""
+        txt3.Text = ""
+        txt4.Text = ""
+        txt5.Text = ""
+        txt6.Text = ""
+        txt7.Text = ""
+        txt8.Text = ""
+        cbp_tip.Text = ""
+        cbp_reg.Text = ""
+        cbp_com.Text = ""
+        cbp_op.Text = ""
 
-        pof.Left = 12
-        pof.Top = 390
-        pof.Visible = False
-
-        pca.Left = 10
-        pca.Top = 390
-        pca.Visible = False
-
-        ped.Left = 12
-        ped.Top = 390
-        ped.Visible = False
-
-        'llenado de los combobox tipo propiedad
-        cbp_tip.Items.Add("BODEGA")
-        cbp_tip.Items.Add("ESTACIONAMIENTO")
-        cbp_tip.Items.Add("OFICINA")
-        cbp_tip.Items.Add("CASA")
-        cbp_tip.Items.Add("DEPARTAMENTO")
-        'llenado de los combobox operacion
-        cbp_op.Items.Add("VENTA")
-        cbp_op.Items.Add("ARRIENDO")
-        'llenado de los combobox regiones
-        cbp_reg.Items.Add("I ARICA Y PARINACOTA")
-        cbp_reg.Items.Add("II TARAPACÁ")
-        cbp_reg.Items.Add("III ANTOFAGASTA")
-        cbp_reg.Items.Add("IV ATACAMA")
-        cbp_reg.Items.Add("V COQUIMBO")
-        cbp_reg.Items.Add("VI VALPARAÍSO")
-        cbp_reg.Items.Add("VII LIBERTADOR BERNARDO O'HIGGINS")
-        cbp_reg.Items.Add("VIII MAULE")
-        cbp_reg.Items.Add("IX BIOBÍO")
-        cbp_reg.Items.Add("X LA ARAUCANÍA")
-        cbp_reg.Items.Add("XI LOS RÍOS")
-        cbp_reg.Items.Add("XII LOS LAGOS")
-        cbp_reg.Items.Add("XIII AISÉN")
-        cbp_reg.Items.Add("XIV MAGALLANES")
-        cbp_reg.Items.Add("XV METROPOLITANA")
 
     End Sub
-
-
     Private Sub regiones_comunas()
         cbp_com.Items.Clear()
         Select Case cbp_reg.SelectedItem
@@ -434,8 +402,34 @@
         End Select
     End Sub
 
+
+    Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Limpiar_campos()
+        cb3.Items.Add("I ARICA Y PARINACOTA")
+        cb3.Items.Add("II TARAPACÁ")
+        cb3.Items.Add("III ANTOFAGASTA")
+        cb3.Items.Add("IV ATACAMA")
+        cb3.Items.Add("V COQUIMBO")
+        cb3.Items.Add("VI VALPARAÍSO")
+        cb3.Items.Add("VII LIBERTADOR BERNARDO O'HIGGINS")
+        cb3.Items.Add("VIII MAULE")
+        cb3.Items.Add("IX BIOBÍO")
+        cb3.Items.Add("X LA ARAUCANÍA")
+        cb3.Items.Add("XI LOS RÍOS")
+        cb3.Items.Add("XII LOS LAGOS")
+        cb3.Items.Add("XIII AISÉN")
+        cb3.Items.Add("XIV MAGALLANES")
+        cb3.Items.Add("XV METROPOLITANA")
+
+        fecha = Format(Now(), "short date")
+        tx_fe.Text = fecha
+        txt1.Focus()
+
+
+    End Sub
+
     'enter
-    Private Sub txt1_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
+    Private Sub txt1_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt1.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -446,38 +440,38 @@
             End If
         End If
     End Sub
-    Private Sub cbp1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_reg.KeyPress
+    Private Sub cbp1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         regiones_comunas()
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cbp_com.Focus()
         End If
     End Sub
-    Private Sub cbp_com_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_com.KeyPress
+    Private Sub cbp_com_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt3.Focus()
         End If
     End Sub
-    Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt3.KeyPress
+    Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt4.Focus()
         End If
     End Sub
-    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
+    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt5.Focus()
         End If
     End Sub
-    Private Sub txt5_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
+    Private Sub txt5_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cbp_op.Focus()
         End If
     End Sub
-    Private Sub cbp_op_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_op.KeyPress
+    Private Sub cbp_op_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cbp_tip.Focus()
         End If
     End Sub
-    Private Sub cbp_tip_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_tip.KeyPress
+    Private Sub cbp_tip_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             Select Case cbp_tip.SelectedItem
                 Case "BODEGA"
@@ -522,7 +516,7 @@
             End Select
         End If
     End Sub
-    Private Sub txt9_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt9.KeyPress
+    Private Sub txt9_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt9.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -533,12 +527,12 @@
             End If
         End If
     End Sub
-    Private Sub txt10_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt10.KeyPress
+    Private Sub txt10_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             bt_grab.Focus()
         End If
     End Sub
-    Private Sub txt11_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt11.KeyPress
+    Private Sub txt11_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt11.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -549,12 +543,12 @@
             End If
         End If
     End Sub
-    Private Sub txt6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt6.KeyPress
+    Private Sub txt6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt6.Focus()
         End If
     End Sub
-    Private Sub txt7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt7.KeyPress
+    Private Sub txt7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt7.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -565,7 +559,7 @@
             End If
         End If
     End Sub
-    Private Sub txt8_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt8.KeyPress
+    Private Sub txt8_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt8.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -576,7 +570,7 @@
             End If
         End If
     End Sub
-    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt12.KeyPress
+    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt12.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -587,12 +581,12 @@
             End If
         End If
     End Sub
-    Private Sub txt13_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt13.KeyPress
+    Private Sub txt13_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt14.Focus()
         End If
     End Sub
-    Private Sub txt14_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt14.KeyPress
+    Private Sub txt14_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt14.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -603,26 +597,40 @@
             End If
         End If
     End Sub
-    Private Sub txt15_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt15.KeyPress
+    Private Sub txt15_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt15.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
                 txt15.Text = ""
                 txt15.Focus()
             Else
-                bt_grab.Focus()
+                bt_grabar.Focus()
             End If
         End If
     End Sub
 
 
 
+
+
+    
+    
+
+    
+
+
+
+
+    
+
+
+
     'botones
-    Private Sub bt_volver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_volver.Click
+    Private Sub bt_volver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Hide()
     End Sub
 
-    Private Sub bt_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_anular.Click
+    Private Sub limpiar_ca()
         txt1.Text = ""
         cbp_reg.Text = ""
         cbp_com.Text = ""
@@ -647,7 +655,68 @@
         pca.Visible = False
         ped.Visible = False
     End Sub
-
+    Private Sub bt_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_anular.Click
+        limpiar_ca()
+    End Sub
     
+    Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
 
+    End Sub
+
+    Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
+
+    End Sub
+
+    Private Sub bt_edi_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_editar.Click
+
+    End Sub
+
+    Private Sub Propiedad_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'posicion de los paneles
+        pbo.Left = 12
+        pbo.Top = 390
+        pbo.Visible = False
+
+        pes.Left = 12
+        pes.Top = 390
+        pes.Visible = False
+
+        pof.Left = 12
+        pof.Top = 390
+        pof.Visible = False
+
+        pca.Left = 10
+        pca.Top = 390
+        pca.Visible = False
+
+        ped.Left = 12
+        ped.Top = 390
+        ped.Visible = False
+
+        'llenado de los combobox tipo propiedad
+        cbp_tip.Items.Add("BODEGA")
+        cbp_tip.Items.Add("ESTACIONAMIENTO")
+        cbp_tip.Items.Add("OFICINA")
+        cbp_tip.Items.Add("CASA")
+        cbp_tip.Items.Add("DEPARTAMENTO")
+        'llenado de los combobox operacion
+        cbp_op.Items.Add("VENTA")
+        cbp_op.Items.Add("ARRIENDO")
+        'llenado de los combobox regiones
+        cbp_reg.Items.Add("I ARICA Y PARINACOTA")
+        cbp_reg.Items.Add("II TARAPACÁ")
+        cbp_reg.Items.Add("III ANTOFAGASTA")
+        cbp_reg.Items.Add("IV ATACAMA")
+        cbp_reg.Items.Add("V COQUIMBO")
+        cbp_reg.Items.Add("VI VALPARAÍSO")
+        cbp_reg.Items.Add("VII LIBERTADOR BERNARDO O'HIGGINS")
+        cbp_reg.Items.Add("VIII MAULE")
+        cbp_reg.Items.Add("IX BIOBÍO")
+        cbp_reg.Items.Add("X LA ARAUCANÍA")
+        cbp_reg.Items.Add("XI LOS RÍOS")
+        cbp_reg.Items.Add("XII LOS LAGOS")
+        cbp_reg.Items.Add("XIII AISÉN")
+        cbp_reg.Items.Add("XIV MAGALLANES")
+        cbp_reg.Items.Add("XV METROPOLITANA")
+    End Sub
 End Class

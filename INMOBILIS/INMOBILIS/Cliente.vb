@@ -1,15 +1,15 @@
-﻿Public Class Form2
+﻿Public Class Cliente
     Dim sw_val As Integer
     Dim fecha As Date
 
-    
-    
-    Private Sub bt_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_vol.Click
+
+
+    Private Sub bt_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Hide()
         Form1.Enabled = True
 
     End Sub
-    Private Sub bt_anu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_anu.Click
+    Private Sub bt_anu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Limpiar_campos()
     End Sub
 
@@ -409,7 +409,7 @@
     End Sub
 
 
-    Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Cliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Limpiar_campos()
         cb3.Items.Add("I ARICA Y PARINACOTA")
         cb3.Items.Add("II TARAPACÁ")
@@ -434,7 +434,7 @@
 
     End Sub
 
-    Private Sub txt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
+    Private Sub txt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If txt1.Text = "" Or txt1.Text = "__.___.___" Then
                 MsgBox("El campo esta vacio", 16, "Error de ingreso")
@@ -444,7 +444,7 @@
             End If
         End If
     End Sub
-    Private Sub txtt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtt1.KeyPress
+    Private Sub txtt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If txtt1.Text = "k" Or txtt1.Text = "0" Or txtt1.Text = "1" Or txtt1.Text = "2" Or txtt1.Text = "3" Or txtt1.Text = "4" Or txtt1.Text = "5" Or txtt1.Text = "6" Or txtt1.Text = "7" Or txtt1.Text = "8" Or txtt1.Text = "9" Then
                 valida_rut(txt1.Text, txtt1.Text)
@@ -461,22 +461,22 @@
             End If
         End If
     End Sub
-    Private Sub txt2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2.KeyPress
+    Private Sub txt2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt3.Focus()
         End If
     End Sub
-    Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt3.KeyPress
+    Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt4.Focus()
         End If
     End Sub
-    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
+    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt5.Focus()
         End If
     End Sub
-    Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
+    Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If txt5.Text <> "00-00-0000" Then
                 Valida_Fecha(txt5.Text)
@@ -491,40 +491,40 @@
             cb1.Focus()
         End If
     End Sub
-    Private Sub cb1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cb1.KeyPress
+    Private Sub cb1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt6.Focus()
         End If
     End Sub
-    Private Sub txt6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt6.KeyPress
+    Private Sub txt6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cb3.Focus()
         End If
     End Sub
-    Private Sub cb3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cb3.KeyPress
+    Private Sub cb3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         regiones_comunas()
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             cb2.Focus()
         End If
     End Sub
-    Private Sub cb2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cb2.KeyPress
+    Private Sub cb2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt7.Focus()
         End If
     End Sub
-    Private Sub txt7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt7.KeyPress
+    Private Sub txt7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt8.Focus()
         End If
     End Sub
-    Private Sub txt8_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt8.KeyPress
+    Private Sub txt8_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt8.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
                 txt8.Text = ""
                 txt8.Focus()
             Else
-                bt_grabar.Focus()
+                bt_gra.Focus()
             End If
         End If
     End Sub
@@ -614,4 +614,115 @@
 
     End Sub
 
+    Private Sub bt_grabar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If txt1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt1.Focus()
+        End If
+        If txtt1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txtt1.Focus()
+        End If
+        If txt2.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt2.Focus()
+        End If
+        If txt3.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt3.Focus()
+        End If
+        If txt4.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt4.Focus()
+        End If
+        If txt5.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt5.Focus()
+        End If
+        If txt6.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt6.Focus()
+        End If
+        If txt7.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt7.Focus()
+        End If
+        If txt8.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt8.Focus()
+        End If
+        If cb1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb1.Focus()
+        End If
+        If cb2.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb2.Focus()
+        End If
+        If cb3.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb3.Focus()
+        End If
+    End Sub
+
+
+
+
+    Private Sub Valida_datos()
+        If txt1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt1.Focus()
+        End If
+        If txtt1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txtt1.Focus()
+        End If
+        If txt2.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt2.Focus()
+        End If
+        If txt3.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt3.Focus()
+        End If
+        If txt4.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt4.Focus()
+        End If
+        If txt5.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt5.Focus()
+        End If
+        If txt6.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt6.Focus()
+        End If
+        If txt7.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt7.Focus()
+        End If
+        If txt8.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            txt8.Focus()
+        End If
+        If cb1.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb1.Focus()
+        End If
+        If cb2.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb2.Focus()
+        End If
+        If cb3.Text = "" Then
+            MsgBox("Cuadro Vacio", 16, "Error de ingreso")
+            cb3.Focus()
+        End If
+    End Sub
+
+    Private Sub bt_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_edit.Click
+        txt1.Enabled = False
+        txtt1.Enabled = False
+        cb1.Enabled = False
+
+    End Sub
 End Class

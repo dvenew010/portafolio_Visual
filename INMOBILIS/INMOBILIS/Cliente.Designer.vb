@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class Cliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,10 +22,19 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cliente))
+        Me.tx_fe = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.bt_anu = New System.Windows.Forms.Button()
+        Me.bt_vol = New System.Windows.Forms.Button()
+        Me.bt_edit = New System.Windows.Forms.Button()
+        Me.bt_elim = New System.Windows.Forms.Button()
+        Me.bt_gra = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtt1 = New System.Windows.Forms.TextBox()
         Me.txt1 = New System.Windows.Forms.MaskedTextBox()
         Me.cb3 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -48,25 +57,113 @@ Partial Class Form2
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.bt_anu = New System.Windows.Forms.Button()
-        Me.bt_vol = New System.Windows.Forms.Button()
-        Me.bt_edit = New System.Windows.Forms.Button()
-        Me.bt_elim = New System.Windows.Forms.Button()
-        Me.bt_grabar = New System.Windows.Forms.Button()
-        Me.tx_fe = New System.Windows.Forms.TextBox()
-        Me.Panel1.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.txtt1 = New System.Windows.Forms.MaskedTextBox()
         Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'tx_fe
+        '
+        Me.tx_fe.BackColor = System.Drawing.SystemColors.MenuBar
+        Me.tx_fe.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tx_fe.Location = New System.Drawing.Point(481, 486)
+        Me.tx_fe.Name = "tx_fe"
+        Me.tx_fe.Size = New System.Drawing.Size(101, 13)
+        Me.tx_fe.TabIndex = 11
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.bt_anu)
+        Me.Panel4.Controls.Add(Me.bt_vol)
+        Me.Panel4.Controls.Add(Me.bt_edit)
+        Me.Panel4.Controls.Add(Me.bt_elim)
+        Me.Panel4.Controls.Add(Me.bt_gra)
+        Me.Panel4.Location = New System.Drawing.Point(481, 153)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(121, 316)
+        Me.Panel4.TabIndex = 10
+        '
+        'bt_anu
+        '
+        Me.bt_anu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_anu.Location = New System.Drawing.Point(21, 185)
+        Me.bt_anu.Name = "bt_anu"
+        Me.bt_anu.Size = New System.Drawing.Size(81, 38)
+        Me.bt_anu.TabIndex = 4
+        Me.bt_anu.Text = "ANULAR"
+        Me.bt_anu.UseVisualStyleBackColor = True
+        '
+        'bt_vol
+        '
+        Me.bt_vol.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_vol.Location = New System.Drawing.Point(21, 259)
+        Me.bt_vol.Name = "bt_vol"
+        Me.bt_vol.Size = New System.Drawing.Size(81, 42)
+        Me.bt_vol.TabIndex = 3
+        Me.bt_vol.Text = "VOLVER"
+        Me.bt_vol.UseVisualStyleBackColor = True
+        '
+        'bt_edit
+        '
+        Me.bt_edit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_edit.Location = New System.Drawing.Point(21, 131)
+        Me.bt_edit.Name = "bt_edit"
+        Me.bt_edit.Size = New System.Drawing.Size(81, 42)
+        Me.bt_edit.TabIndex = 2
+        Me.bt_edit.Text = "EDITAR"
+        Me.bt_edit.UseVisualStyleBackColor = True
+        '
+        'bt_elim
+        '
+        Me.bt_elim.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_elim.Location = New System.Drawing.Point(21, 78)
+        Me.bt_elim.Name = "bt_elim"
+        Me.bt_elim.Size = New System.Drawing.Size(81, 42)
+        Me.bt_elim.TabIndex = 1
+        Me.bt_elim.Text = "ELIMINAR"
+        Me.bt_elim.UseVisualStyleBackColor = True
+        '
+        'bt_gra
+        '
+        Me.bt_gra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_gra.Location = New System.Drawing.Point(21, 19)
+        Me.bt_gra.Name = "bt_gra"
+        Me.bt_gra.Size = New System.Drawing.Size(81, 42)
+        Me.bt_gra.TabIndex = 13
+        Me.bt_gra.Text = "GRABAR"
+        Me.bt_gra.UseVisualStyleBackColor = True
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Location = New System.Drawing.Point(49, 90)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(553, 47)
+        Me.Panel3.TabIndex = 9
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(62, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(370, 29)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "MANTENEDOR DE CLIENTES"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.Location = New System.Drawing.Point(153, 12)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(328, 70)
+        Me.Panel2.TabIndex = 8
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.txtt1)
+        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Controls.Add(Me.cb3)
         Me.Panel1.Controls.Add(Me.Label12)
@@ -89,10 +186,10 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(56, 153)
+        Me.Panel1.Location = New System.Drawing.Point(49, 153)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(400, 355)
-        Me.Panel1.TabIndex = 1
+        Me.Panel1.TabIndex = 7
         '
         'Label13
         '
@@ -103,19 +200,12 @@ Partial Class Form2
         Me.Label13.TabIndex = 23
         Me.Label13.Text = "-"
         '
-        'txtt1
-        '
-        Me.txtt1.Location = New System.Drawing.Point(183, 11)
-        Me.txtt1.Name = "txtt1"
-        Me.txtt1.Size = New System.Drawing.Size(16, 20)
-        Me.txtt1.TabIndex = 2
-        '
         'txt1
         '
-        Me.txt1.Location = New System.Drawing.Point(106, 11)
+        Me.txt1.Location = New System.Drawing.Point(108, 11)
         Me.txt1.Mask = "00,000,000"
         Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(66, 20)
+        Me.txt1.Size = New System.Drawing.Size(61, 20)
         Me.txt1.TabIndex = 1
         '
         'cb3
@@ -141,7 +231,7 @@ Partial Class Form2
         Me.txt5.Location = New System.Drawing.Point(162, 131)
         Me.txt5.Mask = "00/00/0000"
         Me.txt5.Name = "txt5"
-        Me.txt5.Size = New System.Drawing.Size(100, 20)
+        Me.txt5.Size = New System.Drawing.Size(67, 20)
         Me.txt5.TabIndex = 6
         Me.txt5.ValidatingType = GetType(Date)
         '
@@ -305,104 +395,15 @@ Partial Class Form2
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "RUT"
         '
-        'Panel2
+        'txtt1
         '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.Location = New System.Drawing.Point(160, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(328, 70)
-        Me.Panel2.TabIndex = 2
+        Me.txtt1.Location = New System.Drawing.Point(186, 11)
+        Me.txtt1.Mask = "0"
+        Me.txtt1.Name = "txtt1"
+        Me.txtt1.Size = New System.Drawing.Size(12, 20)
+        Me.txtt1.TabIndex = 24
         '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Location = New System.Drawing.Point(56, 90)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(553, 47)
-        Me.Panel3.TabIndex = 4
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(62, 9)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(370, 29)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "MANTENEDOR DE CLIENTES"
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.bt_anu)
-        Me.Panel4.Controls.Add(Me.bt_vol)
-        Me.Panel4.Controls.Add(Me.bt_edit)
-        Me.Panel4.Controls.Add(Me.bt_elim)
-        Me.Panel4.Controls.Add(Me.bt_grabar)
-        Me.Panel4.Location = New System.Drawing.Point(488, 153)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(121, 316)
-        Me.Panel4.TabIndex = 5
-        '
-        'bt_anu
-        '
-        Me.bt_anu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_anu.Location = New System.Drawing.Point(21, 185)
-        Me.bt_anu.Name = "bt_anu"
-        Me.bt_anu.Size = New System.Drawing.Size(81, 38)
-        Me.bt_anu.TabIndex = 4
-        Me.bt_anu.Text = "ANULAR"
-        Me.bt_anu.UseVisualStyleBackColor = True
-        '
-        'bt_vol
-        '
-        Me.bt_vol.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_vol.Location = New System.Drawing.Point(21, 259)
-        Me.bt_vol.Name = "bt_vol"
-        Me.bt_vol.Size = New System.Drawing.Size(81, 42)
-        Me.bt_vol.TabIndex = 3
-        Me.bt_vol.Text = "VOLVER"
-        Me.bt_vol.UseVisualStyleBackColor = True
-        '
-        'bt_edit
-        '
-        Me.bt_edit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_edit.Location = New System.Drawing.Point(21, 131)
-        Me.bt_edit.Name = "bt_edit"
-        Me.bt_edit.Size = New System.Drawing.Size(81, 42)
-        Me.bt_edit.TabIndex = 2
-        Me.bt_edit.Text = "EDITAR"
-        Me.bt_edit.UseVisualStyleBackColor = True
-        '
-        'bt_elim
-        '
-        Me.bt_elim.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_elim.Location = New System.Drawing.Point(21, 78)
-        Me.bt_elim.Name = "bt_elim"
-        Me.bt_elim.Size = New System.Drawing.Size(81, 42)
-        Me.bt_elim.TabIndex = 1
-        Me.bt_elim.Text = "ELIMINAR"
-        Me.bt_elim.UseVisualStyleBackColor = True
-        '
-        'bt_grabar
-        '
-        Me.bt_grabar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_grabar.Location = New System.Drawing.Point(21, 19)
-        Me.bt_grabar.Name = "bt_grabar"
-        Me.bt_grabar.Size = New System.Drawing.Size(81, 42)
-        Me.bt_grabar.TabIndex = 13
-        Me.bt_grabar.Text = "GRABAR"
-        Me.bt_grabar.UseVisualStyleBackColor = True
-        '
-        'tx_fe
-        '
-        Me.tx_fe.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.tx_fe.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tx_fe.Location = New System.Drawing.Point(488, 486)
-        Me.tx_fe.Name = "tx_fe"
-        Me.tx_fe.Size = New System.Drawing.Size(101, 13)
-        Me.tx_fe.TabIndex = 6
-        '
-        'Form2
+        'Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -413,20 +414,34 @@ Partial Class Form2
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Location = New System.Drawing.Point(50, 100)
-        Me.Name = "Form2"
+        Me.Location = New System.Drawing.Point(100, 100)
+        Me.Name = "Cliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "CLIENTE"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Text = "Cliente"
+        Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+    Friend WithEvents tx_fe As System.Windows.Forms.TextBox
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents bt_anu As System.Windows.Forms.Button
+    Friend WithEvents bt_vol As System.Windows.Forms.Button
+    Friend WithEvents bt_edit As System.Windows.Forms.Button
+    Friend WithEvents bt_elim As System.Windows.Forms.Button
+    Friend WithEvents bt_gra As System.Windows.Forms.Button
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents txt1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents cb3 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents txt5 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cb2 As System.Windows.Forms.ComboBox
     Friend WithEvents cb1 As System.Windows.Forms.ComboBox
@@ -446,19 +461,5 @@ Partial Class Form2
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents bt_vol As System.Windows.Forms.Button
-    Friend WithEvents bt_edit As System.Windows.Forms.Button
-    Friend WithEvents bt_elim As System.Windows.Forms.Button
-    Friend WithEvents bt_grabar As System.Windows.Forms.Button
-    Friend WithEvents bt_anu As System.Windows.Forms.Button
-    Friend WithEvents cb3 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents tx_fe As System.Windows.Forms.TextBox
-    Friend WithEvents txt1 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txtt1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtt1 As System.Windows.Forms.MaskedTextBox
 End Class
