@@ -5,24 +5,28 @@
     Private Sub propiedades_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'posicion de los paneles
         pbo.Left = 12
-        pbo.Top = 390
+        pbo.Top = 350
         pbo.Visible = False
 
         pes.Left = 12
-        pes.Top = 390
+        pes.Top = 350
         pes.Visible = False
 
         pof.Left = 12
-        pof.Top = 390
+        pof.Top = 350
         pof.Visible = False
 
-        pca.Left = 10
-        pca.Top = 390
+        pca.Left = 9
+        pca.Top = 350
         pca.Visible = False
 
         ped.Left = 12
-        ped.Top = 390
+        ped.Top = 350
         ped.Visible = False
+
+        pa_grilla.Left = 12
+        pa_grilla.Top = 100
+        pa_grilla.Visible = False
 
         'llenado de los combobox tipo propiedad
         cbp_tip.Items.Add("BODEGA")
@@ -51,6 +55,15 @@
         cbp_reg.Items.Add("XV METROPOLITANA")
     End Sub
 
+    Private Sub txt1_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt1.GotFocus
+        txt1.BackColor = Color.White
+        txt1.ForeColor = Color.Black
+
+    End Sub
+    Private Sub txt1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt1.LostFocus
+        txt1.BackColor = Color.White
+        txt1.ForeColor = Color.Black
+    End Sub
 
 
     'enter
@@ -84,12 +97,12 @@
     End Sub
     Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt3.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            txt4.Focus()
+            txt5.Focus()
         End If
     End Sub
-    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            txt5.Focus()
+            bt_grabar.Focus()
         End If
     End Sub
     Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
@@ -103,7 +116,7 @@
             End If
         End If
     End Sub
-    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt12.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt12.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
@@ -123,6 +136,11 @@
                 cbp_op.Text = ""
                 cbp_op.Focus()
             End If
+        End If
+    End Sub
+    Private Sub RadioButton1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RadioButton1.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            cbp_tip.Focus()
         End If
     End Sub
     Private Sub cbp_tip_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_tip.KeyPress
@@ -183,13 +201,13 @@
                 txt9.Text = ""
                 txt9.Focus()
             Else
-                bt_grabar.Focus()
+                txt4.Focus()
             End If
         End If
     End Sub
     Private Sub txt10_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt10.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            bt_grabar.Focus()
+            txt4.Focus()
         End If
     End Sub
     Private Sub txt11_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt11.KeyPress
@@ -199,7 +217,7 @@
                 txt11.Text = ""
                 txt11.Focus()
             Else
-                bt_grabar.Focus()
+                txt4.Focus()
             End If
         End If
     End Sub
@@ -226,11 +244,11 @@
                 txt8.Text = ""
                 txt8.Focus()
             Else
-                bt_grabar.Focus()
+                txt4.Focus()
             End If
         End If
     End Sub
-    
+
     Private Sub txt13_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt13.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt14.Focus()
@@ -254,7 +272,7 @@
                 txt15.Text = ""
                 txt15.Focus()
             Else
-                bt_grabar.Focus()
+                txt4.Focus()
             End If
         End If
     End Sub
@@ -274,16 +292,46 @@
         limpiar_ca()
     End Sub
     Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
-
+        If Not existe(txt1.Text) Then
+            "Insert into "
+        Else
+            "Update propiedades"
+        End If
     End Sub
     Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
 
     End Sub
+    Private Sub bt_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_editar.Click
+        If txt1.Text = "" Then
+            MsgBox("Rut Vacio no se puede encontrar la propiedad", 16, "Error de ingreso")
+        Else
 
+            pa_grilla.Visible = True
+        End If
 
+    End Sub
+    'boton grilla
+    Private Sub btg_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btg_vol.Click
+        pa_grilla.Hide()
+    End Sub
 
     'validaciones
 
+
+    Private Function existe(val(txt1))
+        Dim consulta As adodb.recordset
+        Dim mys As String
+        mys = "select * from propiedades where id = " & Val(txt1)
+        consulta = gdatabase.execute(mys, 0&)
+        If consulta.eof Then
+            existe = False
+            Exit Function
+        Else
+            existe = True
+            Exit Function
+        End If
+
+    End Function
 
     Private Sub limpiar_ca()
         txt1.Text = ""
@@ -309,7 +357,8 @@
         pes.Visible = False
         pca.Visible = False
         ped.Visible = False
-        'RadioButton1.Checked 
+        RadioButton1.Checked = False
+
 
 
         txt1.Focus()
@@ -698,18 +747,24 @@
         End Select
     End Sub
 
-  
 
- 
 
-   
-    'Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
-    '    If RadioButton1.Checked Then
 
-    '    End If
-    'End Sub
 
-    'Private Sub RadioButton1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadioButton1.Click
 
-    'End Sub
+
+    Private Sub grilla_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        cbp_reg.Text = grilla.Item(1, grilla.CurrentRow.Index).Value
+        cbp_com.Text = grilla.Item(2, grilla.CurrentRow.Index).Value
+        txt3.Text = grilla.Item(3, grilla.CurrentRow.Index).Value
+        txt4.Text = grilla.Item(4, grilla.CurrentRow.Index).Value
+        txt5.Text = grilla.Item(5, grilla.CurrentRow.Index).Value
+        txt12.Text = grilla.Item(6, grilla.CurrentRow.Index).Value
+        cbp_op.Text = grilla.Item(7, grilla.CurrentRow.Index).Value
+        'RadioButton1 = grilla.Item(3, grilla.CurrentRow.Index).Value
+        cbp_tip.Text = grilla.Item(9, grilla.CurrentRow.Index).Value
+
+    End Sub
+
+
 End Class
