@@ -190,14 +190,14 @@ Partial Class cliente
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(15, 150)
+        Me.Panel1.Location = New System.Drawing.Point(15, 145)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(400, 365)
         Me.Panel1.TabIndex = 12
         '
         'txtt1
         '
-        Me.txtt1.Location = New System.Drawing.Point(187, 12)
+        Me.txtt1.Location = New System.Drawing.Point(187, 11)
         Me.txtt1.MaxLength = 1
         Me.txtt1.Name = "txtt1"
         Me.txtt1.Size = New System.Drawing.Size(13, 20)
@@ -209,7 +209,7 @@ Partial Class cliente
         Me.txt1.MaxLength = 8
         Me.txt1.Name = "txt1"
         Me.txt1.Size = New System.Drawing.Size(62, 20)
-        Me.txt1.TabIndex = 27
+        Me.txt1.TabIndex = 1
         '
         'txt9
         '

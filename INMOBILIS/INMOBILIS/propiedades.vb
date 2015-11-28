@@ -68,7 +68,13 @@
     Private Sub cbp_reg_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_reg.KeyPress
         regiones_comunas()
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            cbp_com.Focus()
+            If cbp_reg.Text = "I ARICA Y PARINACOTA" Or cbp_reg.Text = "II TARAPACÁ" Or cbp_reg.Text = "III ANTOFAGASTA" Or cbp_reg.Text = "IV ATACAMA" Or cbp_reg.Text = "V COQUIMBO" Or cbp_reg.Text = "VI VALPARAÍSO" Or cbp_reg.Text = "VII LIBERTADOR BERNARDO O'HIGGINS" Or cbp_reg.Text = "VIII MAULE" Or cbp_reg.Text = "IX BIOBÍO" Or cbp_reg.Text = "X LA ARAUCANÍA" Or cbp_reg.Text = "XI LOS RÍOS" Or cbp_reg.Text = "XII LOS LAGOS" Or cbp_reg.Text = "XIII AISÉN" Or cbp_reg.Text = "XIV MAGALLANES" Or cbp_reg.Text = "XV METROPOLITANA" Then
+                cbp_com.Focus()
+            Else
+                MsgBox("Region no valido", 16, "Error de ingreso")
+                cbp_reg.Text = ""
+                cbp_reg.Focus()
+            End If
         End If
     End Sub
     Private Sub cbp_com_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_com.KeyPress
@@ -81,7 +87,7 @@
             txt4.Focus()
         End If
     End Sub
-    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
+    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt5.Focus()
         End If
@@ -93,58 +99,81 @@
                 txt5.Text = ""
                 txt5.Focus()
             Else
+                txt12.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            If Not IsNumeric(txt12.Text) Then
+                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                txt12.Text = ""
+                txt12.Focus()
+            Else
                 cbp_op.Focus()
             End If
         End If
     End Sub
     Private Sub cbp_op_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_op.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            cbp_tip.Focus()
+            If cbp_op.Text = "VENTA" Or cbp_op.Text = "ARRIENDO" Then
+                cbp_tip.Focus()
+            Else
+                MsgBox("Operacion no valido", 16, "Error de ingreso")
+                cbp_op.Text = ""
+                cbp_op.Focus()
+            End If
         End If
     End Sub
     Private Sub cbp_tip_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_tip.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            Select Case cbp_tip.SelectedItem
-                Case "BODEGA"
-                    pbo.Visible = True
-                    pof.Visible = False
-                    pes.Visible = False
-                    pca.Visible = False
-                    ped.Visible = False
-                    txt9.Focus()
+            If cbp_tip.Text = "BODEGA" Or cbp_tip.Text = "OFICINA" Or cbp_tip.Text = "CASA" Or cbp_tip.Text = "ESTACIONAMIENTO" Or cbp_tip.Text = "DEPARTAMENTO" Then
+                Select Case cbp_tip.SelectedItem
+                    Case "BODEGA"
+                        pbo.Visible = True
+                        pof.Visible = False
+                        pes.Visible = False
+                        pca.Visible = False
+                        ped.Visible = False
+                        txt9.Focus()
 
-                Case "OFICINA"
-                    pof.Visible = True
-                    pes.Visible = False
-                    pca.Visible = False
-                    ped.Visible = False
-                    pbo.Visible = False
-                    txt10.Focus()
+                    Case "OFICINA"
+                        pof.Visible = True
+                        pes.Visible = False
+                        pca.Visible = False
+                        ped.Visible = False
+                        pbo.Visible = False
+                        txt10.Focus()
 
-                Case "ESTACIONAMIENTO"
-                    pes.Visible = True
-                    pof.Visible = False
-                    pca.Visible = False
-                    ped.Visible = False
-                    pbo.Visible = False
-                    txt11.Focus()
+                    Case "ESTACIONAMIENTO"
+                        pes.Visible = True
+                        pof.Visible = False
+                        pca.Visible = False
+                        ped.Visible = False
+                        pbo.Visible = False
+                        txt11.Focus()
 
-                Case "CASA"
-                    pca.Visible = True
-                    pes.Visible = False
-                    pof.Visible = False
-                    ped.Visible = False
-                    pbo.Visible = False
-                    txt6.Focus()
+                    Case "CASA"
+                        pca.Visible = True
+                        pes.Visible = False
+                        pof.Visible = False
+                        ped.Visible = False
+                        pbo.Visible = False
+                        txt6.Focus()
 
-                Case "DEPARTAMENTO"
-                    ped.Visible = True
-                    pes.Visible = False
-                    pca.Visible = False
-                    pof.Visible = False
-                    pbo.Visible = False
-                    txt13.Focus()
-            End Select
+                    Case "DEPARTAMENTO"
+                        ped.Visible = True
+                        pes.Visible = False
+                        pca.Visible = False
+                        pof.Visible = False
+                        pbo.Visible = False
+                        txt13.Focus()
+                End Select
+            Else
+                MsgBox("Tipo de propiedad no valido", 16, "Error de ingreso")
+                cbp_tip.Text = ""
+                cbp_tip.Focus()
+            End If
         End If
     End Sub
     Private Sub txt9_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt9.KeyPress
@@ -197,21 +226,11 @@
                 txt8.Text = ""
                 txt8.Focus()
             Else
-                txt12.Focus()
-            End If
-        End If
-    End Sub
-    Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt12.KeyPress
-        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            If Not IsNumeric(txt12.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
-                txt12.Text = ""
-                txt12.Focus()
-            Else
                 bt_grabar.Focus()
             End If
         End If
     End Sub
+    
     Private Sub txt13_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt13.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt14.Focus()
@@ -290,6 +309,9 @@
         pes.Visible = False
         pca.Visible = False
         ped.Visible = False
+        'RadioButton1.Checked 
+
+
         txt1.Focus()
 
     End Sub
@@ -681,4 +703,13 @@
  
 
    
+    'Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
+    '    If RadioButton1.Checked Then
+
+    '    End If
+    'End Sub
+
+    'Private Sub RadioButton1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadioButton1.Click
+
+    'End Sub
 End Class
