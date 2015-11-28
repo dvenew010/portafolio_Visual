@@ -44,6 +44,8 @@ Partial Class propiedades
         Me.bt_eliminar = New System.Windows.Forms.Button()
         Me.bt_grabar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.txt12 = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -73,11 +75,10 @@ Partial Class propiedades
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txt4 = New System.Windows.Forms.RichTextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.pa_grilla = New System.Windows.Forms.Panel()
         Me.btg_vol = New System.Windows.Forms.Button()
         Me.grilla = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.region1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.comuna = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.constructora = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,8 +86,10 @@ Partial Class propiedades
         Me.m2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.operacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.disponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.disponible = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt4 = New System.Windows.Forms.RichTextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ped.SuspendLayout()
         Me.pca.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -117,21 +120,21 @@ Partial Class propiedades
         Me.txt15.Location = New System.Drawing.Point(170, 54)
         Me.txt15.Name = "txt15"
         Me.txt15.Size = New System.Drawing.Size(56, 20)
-        Me.txt15.TabIndex = 5
+        Me.txt15.TabIndex = 3
         '
         'txt14
         '
         Me.txt14.Location = New System.Drawing.Point(169, 28)
         Me.txt14.Name = "txt14"
         Me.txt14.Size = New System.Drawing.Size(56, 20)
-        Me.txt14.TabIndex = 4
+        Me.txt14.TabIndex = 2
         '
         'txt13
         '
         Me.txt13.Location = New System.Drawing.Point(169, 2)
         Me.txt13.Name = "txt13"
         Me.txt13.Size = New System.Drawing.Size(123, 20)
-        Me.txt13.TabIndex = 3
+        Me.txt13.TabIndex = 1
         '
         'Label17
         '
@@ -181,14 +184,14 @@ Partial Class propiedades
         Me.txt8.Location = New System.Drawing.Point(167, 57)
         Me.txt8.Name = "txt8"
         Me.txt8.Size = New System.Drawing.Size(53, 20)
-        Me.txt8.TabIndex = 5
+        Me.txt8.TabIndex = 3
         '
         'txt7
         '
         Me.txt7.Location = New System.Drawing.Point(167, 29)
         Me.txt7.Name = "txt7"
         Me.txt7.Size = New System.Drawing.Size(53, 20)
-        Me.txt7.TabIndex = 4
+        Me.txt7.TabIndex = 2
         '
         'Label14
         '
@@ -291,6 +294,10 @@ Partial Class propiedades
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txt4)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Label20)
         Me.Panel1.Controls.Add(Me.RadioButton1)
         Me.Panel1.Controls.Add(Me.txt12)
         Me.Panel1.Controls.Add(Me.Label18)
@@ -310,14 +317,31 @@ Partial Class propiedades
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(19, 138)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(497, 214)
+        Me.Panel1.Size = New System.Drawing.Size(497, 293)
         Me.Panel1.TabIndex = 37
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(155, 96)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(187, 20)
+        Me.TextBox1.TabIndex = 50
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(26, 101)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(75, 13)
+        Me.Label20.TabIndex = 49
+        Me.Label20.Text = "DIRECCION"
         '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(328, 159)
+        Me.RadioButton1.Location = New System.Drawing.Point(328, 181)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(99, 17)
         Me.RadioButton1.TabIndex = 48
@@ -327,16 +351,16 @@ Partial Class propiedades
         '
         'txt12
         '
-        Me.txt12.Location = New System.Drawing.Point(366, 129)
+        Me.txt12.Location = New System.Drawing.Point(366, 151)
         Me.txt12.Name = "txt12"
         Me.txt12.Size = New System.Drawing.Size(50, 20)
-        Me.txt12.TabIndex = 29
+        Me.txt12.TabIndex = 6
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(325, 132)
+        Me.Label18.Location = New System.Drawing.Point(325, 154)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(31, 13)
         Me.Label18.TabIndex = 28
@@ -351,17 +375,17 @@ Partial Class propiedades
         '
         'txt5
         '
-        Me.txt5.Location = New System.Drawing.Point(156, 129)
+        Me.txt5.Location = New System.Drawing.Point(156, 151)
         Me.txt5.Name = "txt5"
         Me.txt5.Size = New System.Drawing.Size(97, 20)
-        Me.txt5.TabIndex = 27
+        Me.txt5.TabIndex = 5
         Me.txt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'cbp_op
         '
         Me.cbp_op.BackColor = System.Drawing.Color.White
         Me.cbp_op.FormattingEnabled = True
-        Me.cbp_op.Location = New System.Drawing.Point(156, 158)
+        Me.cbp_op.Location = New System.Drawing.Point(156, 180)
         Me.cbp_op.Name = "cbp_op"
         Me.cbp_op.Size = New System.Drawing.Size(100, 21)
         Me.cbp_op.TabIndex = 7
@@ -387,7 +411,7 @@ Partial Class propiedades
         'cbp_tip
         '
         Me.cbp_tip.FormattingEnabled = True
-        Me.cbp_tip.Location = New System.Drawing.Point(156, 188)
+        Me.cbp_tip.Location = New System.Drawing.Point(156, 264)
         Me.cbp_tip.Name = "cbp_tip"
         Me.cbp_tip.Size = New System.Drawing.Size(175, 21)
         Me.cbp_tip.TabIndex = 8
@@ -395,14 +419,14 @@ Partial Class propiedades
         'cbp_com
         '
         Me.cbp_com.FormattingEnabled = True
-        Me.cbp_com.Location = New System.Drawing.Point(155, 70)
+        Me.cbp_com.Location = New System.Drawing.Point(155, 67)
         Me.cbp_com.Name = "cbp_com"
         Me.cbp_com.Size = New System.Drawing.Size(182, 21)
         Me.cbp_com.TabIndex = 3
         '
         'txt3
         '
-        Me.txt3.Location = New System.Drawing.Point(155, 101)
+        Me.txt3.Location = New System.Drawing.Point(155, 123)
         Me.txt3.Name = "txt3"
         Me.txt3.Size = New System.Drawing.Size(175, 20)
         Me.txt3.TabIndex = 4
@@ -411,7 +435,7 @@ Partial Class propiedades
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(26, 196)
+        Me.Label7.Location = New System.Drawing.Point(26, 272)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(112, 13)
         Me.Label7.TabIndex = 6
@@ -421,7 +445,7 @@ Partial Class propiedades
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(26, 166)
+        Me.Label6.Location = New System.Drawing.Point(26, 188)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 13)
         Me.Label6.TabIndex = 5
@@ -431,7 +455,7 @@ Partial Class propiedades
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(26, 136)
+        Me.Label5.Location = New System.Drawing.Point(26, 158)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 4
@@ -441,7 +465,7 @@ Partial Class propiedades
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(25, 108)
+        Me.Label3.Location = New System.Drawing.Point(25, 130)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(109, 13)
         Me.Label3.TabIndex = 2
@@ -451,7 +475,7 @@ Partial Class propiedades
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(25, 78)
+        Me.Label2.Location = New System.Drawing.Point(25, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 1
@@ -471,7 +495,7 @@ Partial Class propiedades
         '
         Me.pes.Controls.Add(Me.txt11)
         Me.pes.Controls.Add(Me.Label9)
-        Me.pes.Location = New System.Drawing.Point(624, 419)
+        Me.pes.Location = New System.Drawing.Point(624, 396)
         Me.pes.Name = "pes"
         Me.pes.Size = New System.Drawing.Size(341, 40)
         Me.pes.TabIndex = 42
@@ -571,24 +595,6 @@ Partial Class propiedades
         Me.Panel2.Size = New System.Drawing.Size(329, 70)
         Me.Panel2.TabIndex = 35
         '
-        'txt4
-        '
-        Me.txt4.Location = New System.Drawing.Point(175, 450)
-        Me.txt4.Name = "txt4"
-        Me.txt4.Size = New System.Drawing.Size(264, 47)
-        Me.txt4.TabIndex = 47
-        Me.txt4.Text = ""
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(45, 453)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 13)
-        Me.Label4.TabIndex = 48
-        Me.Label4.Text = "DESCRIPCION"
-        '
         'pa_grilla
         '
         Me.pa_grilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -613,12 +619,18 @@ Partial Class propiedades
         Me.grilla.AllowUserToAddRows = False
         Me.grilla.AllowUserToDeleteRows = False
         Me.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.region1, Me.comuna, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
+        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.region1, Me.comuna, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
         Me.grilla.Location = New System.Drawing.Point(11, 62)
         Me.grilla.Name = "grilla"
         Me.grilla.ReadOnly = True
         Me.grilla.Size = New System.Drawing.Size(594, 217)
         Me.grilla.TabIndex = 0
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "id"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
         '
         'region1
         '
@@ -643,6 +655,7 @@ Partial Class propiedades
         Me.precio.HeaderText = "PRECIO"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
+        Me.precio.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'm2
         '
@@ -667,6 +680,8 @@ Partial Class propiedades
         Me.disponible.HeaderText = "DISPONIBLE"
         Me.disponible.Name = "disponible"
         Me.disponible.ReadOnly = True
+        Me.disponible.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.disponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'descripcion
         '
@@ -674,14 +689,30 @@ Partial Class propiedades
         Me.descripcion.Name = "descripcion"
         Me.descripcion.ReadOnly = True
         '
+        'txt4
+        '
+        Me.txt4.Location = New System.Drawing.Point(156, 210)
+        Me.txt4.Name = "txt4"
+        Me.txt4.Size = New System.Drawing.Size(264, 47)
+        Me.txt4.TabIndex = 51
+        Me.txt4.Text = ""
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(26, 213)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 13)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "DESCRIPCION"
+        '
         'propiedades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(857, 780)
         Me.Controls.Add(Me.pa_grilla)
-        Me.Controls.Add(Me.txt4)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ped)
         Me.Controls.Add(Me.pca)
         Me.Controls.Add(Me.Panel4)
@@ -714,7 +745,6 @@ Partial Class propiedades
         Me.pa_grilla.ResumeLayout(False)
         CType(Me.grilla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ped As System.Windows.Forms.Panel
@@ -767,11 +797,10 @@ Partial Class propiedades
     Friend WithEvents txt12 As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents txt4 As System.Windows.Forms.RichTextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents pa_grilla As System.Windows.Forms.Panel
     Friend WithEvents btg_vol As System.Windows.Forms.Button
     Friend WithEvents grilla As System.Windows.Forms.DataGridView
+    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents region1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents comuna As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents constructora As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -779,6 +808,10 @@ Partial Class propiedades
     Friend WithEvents m2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents operacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents disponible As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents disponible As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents txt4 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
