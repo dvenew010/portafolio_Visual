@@ -1,7 +1,7 @@
 ﻿Public Class propiedades
     Dim sw_val As Integer
     Dim fecha As Date
-    Public database As Odbc.OdbcConnection
+    'Public database As Odbc.OdbcConnection
 
     Private Sub propiedades_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'posicion de los paneles
@@ -29,6 +29,15 @@
         pa_grilla.Top = 100
         pa_grilla.Visible = False
 
+        txt7.Left = 164
+        txt7.Top = 457
+        txt7.Visible = False
+
+        txt8.Left = 164
+        txt8.Top = 483
+        txt8.Visible = False
+
+
         'llenado de los combobox tipo propiedad
         cbp_tip.Items.Add("BODEGA")
         cbp_tip.Items.Add("ESTACIONAMIENTO")
@@ -39,6 +48,7 @@
         cbp_op.Items.Add("VENTA")
         cbp_op.Items.Add("ARRIENDO")
         'llenado de los combobox regiones
+        'cbp_reg.items.add()
         cbp_reg.Items.Add("I ARICA Y PARINACOTA")
         cbp_reg.Items.Add("II TARAPACÁ")
         cbp_reg.Items.Add("III ANTOFAGASTA")
@@ -54,28 +64,53 @@
         cbp_reg.Items.Add("XIII AISÉN")
         cbp_reg.Items.Add("XIV MAGALLANES")
         cbp_reg.Items.Add("XV METROPOLITANA")
-    End Sub
 
-    Private Sub txt1_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt1.GotFocus
-        txt1.BackColor = Color.White
-        txt1.ForeColor = Color.Black
+        Panel1.txt1.Focus()
 
     End Sub
-    Private Sub txt1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt1.LostFocus
-        txt1.BackColor = Color.White
-        txt1.ForeColor = Color.Black
-    End Sub
+
+  
 
 
-    'enter
-    Private Sub txt1_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
+    'KEYPRESS
+
+
+    Private Sub txt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt1.Text) Then
                 MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
                 txt1.Text = ""
                 txt1.Focus()
             Else
+                txxt1.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub txxt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txxt1.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            If Not IsNumeric(txt1.Text) Then
+                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                txxt1.Text = ""
+                txxt1.Focus()
+            Else
+                txxtt1.Focus()
+            End If
+        End If
+    End Sub
+    Private Sub txxtt1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txxtt1.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            If UCase(txxtt1.Text) = "K" Or txxtt1.Text = "0" Or txxtt1.Text = "1" Or txxtt1.Text = "2" Or txxtt1.Text = "3" Or txxtt1.Text = "4" Or txxtt1.Text = "5" Or txxtt1.Text = "6" Or txxtt1.Text = "7" Or txxtt1.Text = "8" Or txxtt1.Text = "9" Then
+                valida_rut(txxt1.Text, txxtt1.Text)
+                If sw_val = 1 Then
+                    txxtt1.Text = ""
+                    txxtt1.Focus()
+                    Exit Sub
+                End If
                 cbp_reg.Focus()
+            Else
+                MsgBox("Dato no valido", 16, "Error de ingreso")
+                txxtt1.Text = ""
+                txxtt1.Focus()
             End If
         End If
     End Sub
@@ -93,33 +128,25 @@
     End Sub
     Private Sub cbp_com_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_com.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            'If
+            'Else
+            'End If
             txt2.Focus()
         End If
     End Sub
     Private Sub txt2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            cb_cons.Focus()
+        End If
+    End Sub
+    Private Sub cb_cons_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cb_cons.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt3.Focus()
         End If
     End Sub
     Private Sub txt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt3.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            txt5.Focus()
-        End If
-    End Sub
-    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
-        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            cbp_tip.Focus()
-        End If
-    End Sub
-    Private Sub txt5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt5.KeyPress
-        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            If Not IsNumeric(txt5.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
-                txt5.Text = ""
-                txt5.Focus()
-            Else
-                txt12.Focus()
-            End If
+            txt12.Focus()
         End If
     End Sub
     Private Sub txt12_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt12.KeyPress
@@ -136,7 +163,7 @@
     Private Sub cbp_op_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_op.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If UCase(cbp_op.Text) = "VENTA" Or UCase(cbp_op.Text) = "ARRIENDO" Then
-                txt4.Focus()
+                txtt3.Focus()
             Else
                 MsgBox("Operacion no valido", 16, "Error de ingreso")
                 cbp_op.Text = ""
@@ -144,9 +171,19 @@
             End If
         End If
     End Sub
-    Private Sub RadioButton1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RadioButton1.KeyPress
+    Private Sub txtt3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtt3.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             txt4.Focus()
+        End If
+    End Sub
+    Private Sub RadioButton1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles RadioButton1.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            cbp_op.Focus()
+        End If
+    End Sub
+    Private Sub txt4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt4.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            cbp_tip.Focus()
         End If
     End Sub
     Private Sub cbp_tip_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbp_tip.KeyPress
@@ -184,6 +221,8 @@
                         ped.Visible = False
                         pbo.Visible = False
                         txt6.Focus()
+                        txt7.Visible = True
+                        txt8.Visible = True
 
                     Case "DEPARTAMENTO"
                         ped.Visible = True
@@ -192,6 +231,9 @@
                         pof.Visible = False
                         pbo.Visible = False
                         txt13.Focus()
+                        txt7.Visible = True
+                        txt8.Visible = True
+
                 End Select
             Else
                 MsgBox("Tipo de propiedad no valido", 16, "Error de ingreso")
@@ -203,7 +245,7 @@
     Private Sub txt9_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt9.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt9.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
                 txt9.Text = ""
                 txt9.Focus()
             Else
@@ -214,7 +256,7 @@
     Private Sub txt10_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt10.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt10.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
                 txt10.Text = ""
                 txt10.Focus()
             Else
@@ -225,7 +267,7 @@
     Private Sub txt11_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt11.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt11.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
                 txt11.Text = ""
                 txt11.Focus()
             Else
@@ -241,7 +283,7 @@
     Private Sub txt7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt7.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt7.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
                 txt7.Text = ""
                 txt7.Focus()
             Else
@@ -260,60 +302,41 @@
             End If
         End If
     End Sub
-
     Private Sub txt13_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt13.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            txt14.Focus()
+            txt7.Focus()
         End If
     End Sub
-    Private Sub txt14_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt14.KeyPress
-        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            If Not IsNumeric(txt14.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
-                txt14.Text = ""
-                txt14.Focus()
-            Else
-                txt15.Focus()
-            End If
-        End If
-    End Sub
-    Private Sub txt15_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt15.KeyPress
-        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            If Not IsNumeric(txt15.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
-                txt15.Text = ""
-                txt15.Focus()
-            Else
-                bt_grabar.Focus()
-            End If
-        End If
-    End Sub
+    
+
     ' funcion grilla 
     Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grillap.CellDoubleClick
         txt1.Text = grillap.Item(0, grillap.CurrentRow.Index).Value()
-        cbp_reg.Text = grillap.Item(1, grillap.CurrentRow.Index).Value()
-        cbp_com.Text = grillap.Item(2, grillap.CurrentRow.Index).Value()
-        txt2.Text = grillap.Item(3, grillap.CurrentRow.Index).Value()
-        txt3.Text = grillap.Item(4, grillap.CurrentRow.Index).Value()
-        txt5.Text = grillap.Item(5, grillap.CurrentRow.Index).Value()
-        txt12.Text = grillap.Item(6, grillap.CurrentRow.Index).Value()
-        cbp_op.Text = grillap.Item(7, grillap.CurrentRow.Index).Value()
-        cbp_tip.Text = grillap.Item(8, grillap.CurrentRow.Index).Value()
+        txxt1.Text = grillap.Item(1, grillap.CurrentRow.Index).Value()
+        txxtt1.Text = grillap.Item(2, grillap.CurrentRow.Index).Value()
+        cbp_reg.Text = grillap.Item(3, grillap.CurrentRow.Index).Value()
+        cbp_com.Text = grillap.Item(4, grillap.CurrentRow.Index).Value()
+        txt2.Text = grillap.Item(5, grillap.CurrentRow.Index).Value()
+        cb_cons.Text = grillap.Item(6, grillap.CurrentRow.Index).Value()
+        txt3.Text = grillap.Item(7, grillap.CurrentRow.Index).Value()
+        txt12.Text = grillap.Item(8, grillap.CurrentRow.Index).Value()
         RadioButton1.Checked = grillap.Item(9, grillap.CurrentRow.Index).Value()
-        txt4.Text = grillap.Item(10, grillap.CurrentRow.Index).Value()
+        cbp_op.Text = grillap.Item(10, grillap.CurrentRow.Index).Value()
+        txtt3.Text = grillap.Item(11, grillap.CurrentRow.Index).Value()
+        txt4.Text = grillap.Item(12, grillap.CurrentRow.Index).Value()
+        cbp_tip.Text = grillap.Item(13, grillap.CurrentRow.Index).Value()
 
         pa_grilla.Visible = False
         txt1.Enabled = False
-
-
     End Sub
 
 
 
 
+    '**************************************************
+    'BOTONOES 
 
-    'botones
-
+    
     Private Sub bt_volver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_volver.Click
         Me.Hide()
     End Sub
@@ -323,23 +346,28 @@
     End Sub
     Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
         Me.grillap.Refresh()
-        replace()
+        If txt1.Text = "" Then
+            MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
+        Else
+            replacepro()
+        End If
         limpiar_ca()
     End Sub
     Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
-        Me.grillap.Rows.RemoveAt(Me.grillap.CurrentRow.Index)
+        If txt1.Text = "" Then
+            MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
+        Else
+            deletepro()
+        End If
         limpiar_ca()
+        txt1.Enabled = True
+        txt1.Focus()
     End Sub
     Private Sub bt_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_editar.Click
-        'If txt1.Text = "" Then
-        '    MsgBox("ID Vacio no se puede encontrar la propiedad", 16, "Error de ingreso")
-        'Else
-
         pa_grilla.Visible = True
-        'End If
-
     End Sub
-    'boton grilla
+    '**************************************
+    'BOTON GRILLA
     Private Sub btg_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btg_vol.Click
         pa_grilla.Hide()
         txt1.Focus()
@@ -351,13 +379,18 @@
 
     Private Sub limpiar_ca()
         txt1.Text = ""
+        txxt1.Text = ""
+        txxtt1.Text = ""
         cbp_reg.Text = ""
         cbp_com.Text = ""
         txt2.Text = ""
+        cb_cons.Text = ""
         txt3.Text = ""
-        txt4.Text = ""
-        txt5.Text = ""
+        txt12.Text = ""
+        RadioButton1.Checked = False
         cbp_op.Text = ""
+        txtt3.Text = ""
+        txt4.Text = ""
         cbp_tip.Text = ""
         txt6.Text = ""
         txt7.Text = ""
@@ -365,21 +398,13 @@
         txt9.Text = ""
         txt10.Text = ""
         txt11.Text = ""
-        txt12.Text = ""
         txt13.Text = ""
-        txt14.Text = ""
-        txt15.Text = ""
         pbo.Visible = False
         pof.Visible = False
         pes.Visible = False
         pca.Visible = False
         ped.Visible = False
-        RadioButton1.Checked = False
-
-
-
         txt1.Focus()
-
     End Sub
 
     Private Sub regiones_comunas()
@@ -764,7 +789,7 @@
         End Select
     End Sub
 
-    Private Sub replace()
+    Private Sub replacepro()
         Dim Codigo As String
         For Each row As DataGridViewRow In Me.grillap.Rows
             'obtenemos el valor de la columna en la variable declarada
@@ -772,25 +797,82 @@
             If Codigo = txt1.Text Then
                 Me.grillap.Rows.RemoveAt(Me.grillap.CurrentRow.Index)
                 row.Cells(0).Value = Codigo
-                row.Cells(1).Value =
-                row.Cells(2).Value = txt2.Text
-                row.Cells(3).Value = txt3.Text
-                row.Cells(4).Value = txt4.Text
-                row.Cells(5).Value = txt5.Text
-                row.Cells(6).Value =
-                row.Cells(7).Value = txt6.Text
-                row.Cells(8).Value = txt9.Text
-                row.Cells(9).Value = cb3.Text
-                row.Cells(10).Value = cb2.Text
-                row.Cells(11).Value = txt7.Text
-                row.Cells(12).Value = txt8.Text
+                row.Cells(1).Value = txxt1.Text
+                row.Cells(2).Value = txxtt1.Text
+                row.Cells(3).Value = cbp_reg.Text
+                row.Cells(4).Value = cbp_com.Text
+                row.Cells(5).Value = txt2.Text
+                row.Cells(6).Value = cb_cons.Text
+                row.Cells(7).Value = txt3.Text
+                row.Cells(8).Value = txt12.Text
+                row.Cells(9).Value = RadioButton1.Text
+                row.Cells(10).Value = cbp_op.Text
+                row.Cells(11).Value = txtt3.Text
+                row.Cells(12).Value = txt4.Text
+                row.Cells(13).Value = cbp_tip.Text
+                row.Cells(14).Value = txt6.Text
+                row.Cells(15).Value = txt7.Text
+                row.Cells(16).Value = txt8.Text
+                row.Cells(17).Value = txt13.Text
+                row.Cells(18).Value = txt10.Text
+                row.Cells(19).Value = txt9.Text
+                row.Cells(20).Value = txt11.Text
             End If
         Next
-        Me.grillap.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
+        Me.grillap.Rows.Add(Me.txt1.Text, Me.txxt1.Text, Me.txxtt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.cb_cons.Text, Me.txt3.Text, Me.txt12.Text, Me.RadioButton1.Checked, Me.cbp_op.Text, Me.txtt3.Text, Me.txt4.Text, Me.cbp_tip.Text, Me.txt6.Text, Me.txt7.Text, Me.txt8.Text, Me.txt13.Text, Me.txt10.Text, Me.txt9.Text, Me.txt11.Text)
     End Sub
 
+    Private Sub deletepro()
+        Dim Codigo As String
+        For Each row As DataGridViewRow In Me.grillap.Rows
+            'obtenemos el valor de la columna en la variable declarada
+            Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
+            If Codigo = txt1.Text Then
+                Me.grillap.Rows.RemoveAt(Me.grillap.CurrentRow.Index)
+            End If
+        Next
+    End Sub
 
+    Private Sub valida_rut(ByVal mmm As Integer, ByVal dv As String)
+        Dim rut As Integer
+        Dim digito As String
+        Dim contarnumerodeauno As Integer
+        Dim contar As Integer
+        Dim acumulador As Integer
+        Dim division As Integer
+        Dim dig As Integer
+        Dim dig2 As String
 
+        contar = 2
+        rut = txxt1.Text
+        digito = txxtt1.Text
+        Do While rut <> 0
+            contarnumerodeauno = (rut Mod 10) * contar
+            acumulador = acumulador + contarnumerodeauno
+            rut = rut \ 10
+            contar = contar + 1
+            If contar = 8 Then
+                contar = 2
+            End If
+        Loop
+        division = acumulador Mod 11
+        If division = 0 Then
+            division = 11
+        End If
+        dig = 11 - division
+        dig2 = CStr(dig)
+
+        If dig2 = 10 Then
+            dig2 = "k"
+        End If
+
+        If dig2 = digito Then
+            sw_val = 0
+        Else
+            MsgBox(" Error: El Digito Verificador no es Correcto  ")
+            sw_val = 1
+        End If
+
+    End Sub
     
-
 End Class

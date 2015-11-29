@@ -469,7 +469,7 @@ Partial Class cliente
         Me.grilla.AllowUserToDeleteRows = False
         Me.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rut, Me.dv, Me.nombre, Me.paterno, Me.materno, Me.nacimiento, Me.sexo, Me.correo, Me.password, Me.region1, Me.comuna, Me.direccion, Me.telefono})
-        Me.grilla.Location = New System.Drawing.Point(12, 59)
+        Me.grilla.Location = New System.Drawing.Point(12, 61)
         Me.grilla.Name = "grilla"
         Me.grilla.ReadOnly = True
         Me.grilla.Size = New System.Drawing.Size(594, 217)

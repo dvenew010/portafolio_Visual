@@ -44,7 +44,7 @@
     Private Sub txt1_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
             If Not IsNumeric(txt1.Text) Then
-                MsgBox("Debe Ingresar valor Numerico", MsgBoxStyle.Critical And MsgBoxStyle.OkOnly, "Error de valor")
+                MsgBox("Debe ingresar numeros", 16, "Error de ingreso")
                 txt1.Text = ""
                 txt1.Focus()
             Else
@@ -160,22 +160,23 @@
 
 
     '' BOTONES 
-
+    
     Private Sub bt_gra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_gra.Click
         
-        If Not IsNumeric(txt1.Text) Then
+        If txt1.Text = "" Then
             MsgBox("Rut no valido no se puede agregar", 16, "Error de ingreso")
             txt1.Focus()
         Else
-            'replace()
+            replacecli()
+            Limpiar_campos()
         End If
     End Sub
     Private Sub bt_elim_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_elim.Click
-        Me.grilla.Refresh()
+        'Me.grilla.Refresh()
         If txt1.Text = "" Then
             MsgBox("Rut no valido no se puede eliminar", 16, "Error de ingreso")
         Else
-            delete()
+            deletecli()
         End If
         Limpiar_campos()
     End Sub
@@ -200,18 +201,18 @@
 
 
     '' VALIDACIONES
-    Private Sub delete()
+    Private Sub deletecli()
         Dim Codigo As String
-            For Each row As DataGridViewRow In Me.grilla.Rows
-                'obtenemos el valor de la columna en la variable declarada
-                Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
-                If Codigo = txt1.Text Then
-                    Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
-                End If
+        For Each row As DataGridViewRow In Me.grilla.Rows
+            'obtenemos el valor de la columna en la variable declarada
+            Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
+            If Codigo = txt1.Text Then
+                Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+            End If
         Next
     End Sub
 
-    Private Sub replace()
+    Private Sub replacecli()
         Dim Codigo, mmm, mmm1 As String
         For Each row As DataGridViewRow In Me.grilla.Rows
             'obtenemos el valor de la columna en la variable declarada
