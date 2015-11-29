@@ -79,7 +79,7 @@ Partial Class propiedades
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pa_grilla = New System.Windows.Forms.Panel()
         Me.btg_vol = New System.Windows.Forms.Button()
-        Me.grilla = New System.Windows.Forms.DataGridView()
+        Me.grillap = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.region1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.comuna = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -100,7 +100,7 @@ Partial Class propiedades
         Me.pbo.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.pa_grilla.SuspendLayout()
-        CType(Me.grilla, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grillap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ped
@@ -618,7 +618,7 @@ Partial Class propiedades
         '
         Me.pa_grilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pa_grilla.Controls.Add(Me.btg_vol)
-        Me.pa_grilla.Controls.Add(Me.grilla)
+        Me.pa_grilla.Controls.Add(Me.grillap)
         Me.pa_grilla.Location = New System.Drawing.Point(33, 488)
         Me.pa_grilla.Name = "pa_grilla"
         Me.pa_grilla.Size = New System.Drawing.Size(620, 300)
@@ -633,17 +633,17 @@ Partial Class propiedades
         Me.btg_vol.Text = "VOLVER"
         Me.btg_vol.UseVisualStyleBackColor = True
         '
-        'grilla
+        'grillap
         '
-        Me.grilla.AllowUserToAddRows = False
-        Me.grilla.AllowUserToDeleteRows = False
-        Me.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.region1, Me.comuna, Me.direccion, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
-        Me.grilla.Location = New System.Drawing.Point(11, 62)
-        Me.grilla.Name = "grilla"
-        Me.grilla.ReadOnly = True
-        Me.grilla.Size = New System.Drawing.Size(594, 217)
-        Me.grilla.TabIndex = 0
+        Me.grillap.AllowUserToAddRows = False
+        Me.grillap.AllowUserToDeleteRows = False
+        Me.grillap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grillap.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.region1, Me.comuna, Me.direccion, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
+        Me.grillap.Location = New System.Drawing.Point(11, 62)
+        Me.grillap.Name = "grillap"
+        Me.grillap.ReadOnly = True
+        Me.grillap.Size = New System.Drawing.Size(594, 217)
+        Me.grillap.TabIndex = 0
         '
         'ID
         '
@@ -750,7 +750,7 @@ Partial Class propiedades
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.pa_grilla.ResumeLayout(False)
-        CType(Me.grilla, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grillap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -806,7 +806,7 @@ Partial Class propiedades
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents pa_grilla As System.Windows.Forms.Panel
     Friend WithEvents btg_vol As System.Windows.Forms.Button
-    Friend WithEvents grilla As System.Windows.Forms.DataGridView
+    Friend WithEvents grillap As System.Windows.Forms.DataGridView
     Friend WithEvents txt2 As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents txt4 As System.Windows.Forms.RichTextBox

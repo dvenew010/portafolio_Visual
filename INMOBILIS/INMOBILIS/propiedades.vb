@@ -289,18 +289,18 @@
         End If
     End Sub
     ' funcion grilla 
-    Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grilla.CellDoubleClick
-        txt1.Text = grilla.Item(0, grilla.CurrentRow.Index).Value()
-        cbp_reg.Text = grilla.Item(1, grilla.CurrentRow.Index).Value()
-        cbp_com.Text = grilla.Item(2, grilla.CurrentRow.Index).Value()
-        txt2.Text = grilla.Item(3, grilla.CurrentRow.Index).Value()
-        txt3.Text = grilla.Item(4, grilla.CurrentRow.Index).Value()
-        txt5.Text = grilla.Item(5, grilla.CurrentRow.Index).Value()
-        txt12.Text = grilla.Item(6, grilla.CurrentRow.Index).Value()
-        cbp_op.Text = grilla.Item(7, grilla.CurrentRow.Index).Value()
-        cbp_tip.Text = grilla.Item(8, grilla.CurrentRow.Index).Value()
-        RadioButton1.Checked = grilla.Item(9, grilla.CurrentRow.Index).Value()
-        txt4.Text = grilla.Item(10, grilla.CurrentRow.Index).Value()
+    Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grillap.CellDoubleClick
+        txt1.Text = grillap.Item(0, grillap.CurrentRow.Index).Value()
+        cbp_reg.Text = grillap.Item(1, grillap.CurrentRow.Index).Value()
+        cbp_com.Text = grillap.Item(2, grillap.CurrentRow.Index).Value()
+        txt2.Text = grillap.Item(3, grillap.CurrentRow.Index).Value()
+        txt3.Text = grillap.Item(4, grillap.CurrentRow.Index).Value()
+        txt5.Text = grillap.Item(5, grillap.CurrentRow.Index).Value()
+        txt12.Text = grillap.Item(6, grillap.CurrentRow.Index).Value()
+        cbp_op.Text = grillap.Item(7, grillap.CurrentRow.Index).Value()
+        cbp_tip.Text = grillap.Item(8, grillap.CurrentRow.Index).Value()
+        RadioButton1.Checked = grillap.Item(9, grillap.CurrentRow.Index).Value()
+        txt4.Text = grillap.Item(10, grillap.CurrentRow.Index).Value()
 
         pa_grilla.Visible = False
         txt1.Enabled = False
@@ -322,12 +322,12 @@
         limpiar_ca()
     End Sub
     Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
-        Me.grilla.Refresh()
+        Me.grillap.Refresh()
         replace()
         limpiar_ca()
     End Sub
     Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
-        Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+        Me.grillap.Rows.RemoveAt(Me.grillap.CurrentRow.Index)
         limpiar_ca()
     End Sub
     Private Sub bt_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_editar.Click
@@ -347,7 +347,7 @@
 
     'validaciones
 
-   
+
 
     Private Sub limpiar_ca()
         txt1.Text = ""
@@ -766,11 +766,11 @@
 
     Private Sub replace()
         Dim Codigo As String
-        For Each row As DataGridViewRow In Me.grilla.Rows
+        For Each row As DataGridViewRow In Me.grillap.Rows
             'obtenemos el valor de la columna en la variable declarada
             Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
             If Codigo = txt1.Text Then
-                Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+                Me.grillap.Rows.RemoveAt(Me.grillap.CurrentRow.Index)
                 row.Cells(0).Value = Codigo
                 row.Cells(1).Value =
                 row.Cells(2).Value = txt2.Text
@@ -786,7 +786,7 @@
                 row.Cells(12).Value = txt8.Text
             End If
         Next
-        Me.grilla.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
+        Me.grillap.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
     End Sub
 
 
