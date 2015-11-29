@@ -23,6 +23,7 @@ Partial Class cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cliente))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tx_fe = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.bt_anu = New System.Windows.Forms.Button()
@@ -60,9 +61,27 @@ Partial Class cliente
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.pa_grilla = New System.Windows.Forms.Panel()
+        Me.btg_vol = New System.Windows.Forms.Button()
+        Me.grilla = New System.Windows.Forms.DataGridView()
+        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dv = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.paterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.materno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sexo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.password = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.region1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.comuna = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.pa_grilla.SuspendLayout()
+        CType(Me.grilla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tx_fe
@@ -285,6 +304,7 @@ Partial Class cliente
         'txt8
         '
         Me.txt8.Location = New System.Drawing.Point(106, 337)
+        Me.txt8.MaxLength = 8
         Me.txt8.Name = "txt8"
         Me.txt8.Size = New System.Drawing.Size(94, 20)
         Me.txt8.TabIndex = 12
@@ -424,11 +444,127 @@ Partial Class cliente
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "RUT"
         '
+        'pa_grilla
+        '
+        Me.pa_grilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pa_grilla.Controls.Add(Me.btg_vol)
+        Me.pa_grilla.Controls.Add(Me.grilla)
+        Me.pa_grilla.Location = New System.Drawing.Point(583, 193)
+        Me.pa_grilla.Name = "pa_grilla"
+        Me.pa_grilla.Size = New System.Drawing.Size(620, 300)
+        Me.pa_grilla.TabIndex = 51
+        '
+        'btg_vol
+        '
+        Me.btg_vol.Location = New System.Drawing.Point(450, 18)
+        Me.btg_vol.Name = "btg_vol"
+        Me.btg_vol.Size = New System.Drawing.Size(79, 27)
+        Me.btg_vol.TabIndex = 1
+        Me.btg_vol.Text = "VOLVER"
+        Me.btg_vol.UseVisualStyleBackColor = True
+        '
+        'grilla
+        '
+        Me.grilla.AllowUserToAddRows = False
+        Me.grilla.AllowUserToDeleteRows = False
+        Me.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rut, Me.dv, Me.nombre, Me.paterno, Me.materno, Me.nacimiento, Me.sexo, Me.correo, Me.password, Me.region1, Me.comuna, Me.direccion, Me.telefono})
+        Me.grilla.Location = New System.Drawing.Point(12, 59)
+        Me.grilla.Name = "grilla"
+        Me.grilla.ReadOnly = True
+        Me.grilla.Size = New System.Drawing.Size(594, 217)
+        Me.grilla.TabIndex = 0
+        '
+        'rut
+        '
+        Me.rut.HeaderText = "RUT"
+        Me.rut.Name = "rut"
+        Me.rut.ReadOnly = True
+        '
+        'dv
+        '
+        Me.dv.HeaderText = "DV"
+        Me.dv.Name = "dv"
+        Me.dv.ReadOnly = True
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "NOMBRE"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        '
+        'paterno
+        '
+        Me.paterno.HeaderText = "PATERNO"
+        Me.paterno.Name = "paterno"
+        Me.paterno.ReadOnly = True
+        '
+        'materno
+        '
+        Me.materno.HeaderText = "MATERNO"
+        Me.materno.Name = "materno"
+        Me.materno.ReadOnly = True
+        '
+        'nacimiento
+        '
+        DataGridViewCellStyle2.Format = "d"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.nacimiento.DefaultCellStyle = DataGridViewCellStyle2
+        Me.nacimiento.HeaderText = "NACIMIENTO"
+        Me.nacimiento.Name = "nacimiento"
+        Me.nacimiento.ReadOnly = True
+        '
+        'sexo
+        '
+        Me.sexo.HeaderText = "SEXO"
+        Me.sexo.Name = "sexo"
+        Me.sexo.ReadOnly = True
+        Me.sexo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'correo
+        '
+        Me.correo.HeaderText = "CORREO"
+        Me.correo.Name = "correo"
+        Me.correo.ReadOnly = True
+        '
+        'password
+        '
+        Me.password.HeaderText = "PASSWORD"
+        Me.password.Name = "password"
+        Me.password.ReadOnly = True
+        '
+        'region1
+        '
+        Me.region1.HeaderText = "REGION"
+        Me.region1.Name = "region1"
+        Me.region1.ReadOnly = True
+        Me.region1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'comuna
+        '
+        Me.comuna.HeaderText = "COMUNA"
+        Me.comuna.Name = "comuna"
+        Me.comuna.ReadOnly = True
+        Me.comuna.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'direccion
+        '
+        Me.direccion.HeaderText = "DIRECCION"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
+        '
+        'telefono
+        '
+        Me.telefono.HeaderText = "TELEFONO"
+        Me.telefono.Name = "telefono"
+        Me.telefono.ReadOnly = True
+        '
         'cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 511)
+        Me.ClientSize = New System.Drawing.Size(1307, 527)
+        Me.Controls.Add(Me.pa_grilla)
         Me.Controls.Add(Me.tx_fe)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
@@ -444,6 +580,8 @@ Partial Class cliente
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.pa_grilla.ResumeLayout(False)
+        CType(Me.grilla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -485,4 +623,20 @@ Partial Class cliente
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents pa_grilla As System.Windows.Forms.Panel
+    Friend WithEvents btg_vol As System.Windows.Forms.Button
+    Friend WithEvents grilla As System.Windows.Forms.DataGridView
+    Friend WithEvents rut As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dv As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents paterno As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents materno As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents nacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents sexo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents correo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents password As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents region1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents comuna As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents direccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents telefono As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

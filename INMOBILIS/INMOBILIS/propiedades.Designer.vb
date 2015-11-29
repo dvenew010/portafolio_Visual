@@ -44,7 +44,9 @@ Partial Class propiedades
         Me.bt_eliminar = New System.Windows.Forms.Button()
         Me.bt_grabar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt4 = New System.Windows.Forms.RichTextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt2 = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.txt12 = New System.Windows.Forms.TextBox()
@@ -81,6 +83,7 @@ Partial Class propiedades
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.region1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.comuna = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.constructora = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.m2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -88,8 +91,6 @@ Partial Class propiedades
         Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.disponible = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt4 = New System.Windows.Forms.RichTextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.ped.SuspendLayout()
         Me.pca.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -296,7 +297,7 @@ Partial Class propiedades
         '
         Me.Panel1.Controls.Add(Me.txt4)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.txt2)
         Me.Panel1.Controls.Add(Me.Label20)
         Me.Panel1.Controls.Add(Me.RadioButton1)
         Me.Panel1.Controls.Add(Me.txt12)
@@ -320,12 +321,30 @@ Partial Class propiedades
         Me.Panel1.Size = New System.Drawing.Size(497, 293)
         Me.Panel1.TabIndex = 37
         '
-        'TextBox1
+        'txt4
         '
-        Me.TextBox1.Location = New System.Drawing.Point(155, 96)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox1.TabIndex = 50
+        Me.txt4.Location = New System.Drawing.Point(156, 210)
+        Me.txt4.Name = "txt4"
+        Me.txt4.Size = New System.Drawing.Size(264, 47)
+        Me.txt4.TabIndex = 51
+        Me.txt4.Text = ""
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(26, 213)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 13)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "DESCRIPCION"
+        '
+        'txt2
+        '
+        Me.txt2.Location = New System.Drawing.Point(155, 96)
+        Me.txt2.Name = "txt2"
+        Me.txt2.Size = New System.Drawing.Size(187, 20)
+        Me.txt2.TabIndex = 50
         '
         'Label20
         '
@@ -619,7 +638,7 @@ Partial Class propiedades
         Me.grilla.AllowUserToAddRows = False
         Me.grilla.AllowUserToDeleteRows = False
         Me.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.region1, Me.comuna, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
+        Me.grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.region1, Me.comuna, Me.direccion, Me.constructora, Me.precio, Me.m2, Me.operacion, Me.tipo, Me.disponible, Me.descripcion})
         Me.grilla.Location = New System.Drawing.Point(11, 62)
         Me.grilla.Name = "grilla"
         Me.grilla.ReadOnly = True
@@ -643,6 +662,12 @@ Partial Class propiedades
         Me.comuna.HeaderText = "COMUNA"
         Me.comuna.Name = "comuna"
         Me.comuna.ReadOnly = True
+        '
+        'direccion
+        '
+        Me.direccion.HeaderText = "DIRECCION"
+        Me.direccion.Name = "direccion"
+        Me.direccion.ReadOnly = True
         '
         'constructora
         '
@@ -688,24 +713,6 @@ Partial Class propiedades
         Me.descripcion.HeaderText = "DESCRIPCION"
         Me.descripcion.Name = "descripcion"
         Me.descripcion.ReadOnly = True
-        '
-        'txt4
-        '
-        Me.txt4.Location = New System.Drawing.Point(156, 210)
-        Me.txt4.Name = "txt4"
-        Me.txt4.Size = New System.Drawing.Size(264, 47)
-        Me.txt4.TabIndex = 51
-        Me.txt4.Text = ""
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 213)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 13)
-        Me.Label4.TabIndex = 52
-        Me.Label4.Text = "DESCRIPCION"
         '
         'propiedades
         '
@@ -800,9 +807,14 @@ Partial Class propiedades
     Friend WithEvents pa_grilla As System.Windows.Forms.Panel
     Friend WithEvents btg_vol As System.Windows.Forms.Button
     Friend WithEvents grilla As System.Windows.Forms.DataGridView
+    Friend WithEvents txt2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents txt4 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents region1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents comuna As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents direccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents constructora As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents m2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -810,8 +822,4 @@ Partial Class propiedades
     Friend WithEvents tipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents disponible As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents txt4 As System.Windows.Forms.RichTextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

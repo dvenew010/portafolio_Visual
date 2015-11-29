@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub btn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn.Click
-        If UCase(txt1.Text) = "ADMIN" And txt2.Text = "admin1" Then
+        If UCase(txt1.Text) = "ADMIN" And UCase(txt2.Text) = "ADMIN1" Then
             Form1.Show()
             Form1.Focus()
             Me.Hide()
