@@ -288,8 +288,25 @@
             End If
         End If
     End Sub
+    ' funcion grilla 
+    Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grilla.CellDoubleClick
+        txt1.Text = grilla.Item(0, grilla.CurrentRow.Index).Value()
+        cbp_reg.Text = grilla.Item(1, grilla.CurrentRow.Index).Value()
+        cbp_com.Text = grilla.Item(2, grilla.CurrentRow.Index).Value()
+        txt2.Text = grilla.Item(3, grilla.CurrentRow.Index).Value()
+        txt3.Text = grilla.Item(4, grilla.CurrentRow.Index).Value()
+        txt5.Text = grilla.Item(5, grilla.CurrentRow.Index).Value()
+        txt12.Text = grilla.Item(6, grilla.CurrentRow.Index).Value()
+        cbp_op.Text = grilla.Item(7, grilla.CurrentRow.Index).Value()
+        cbp_tip.Text = grilla.Item(8, grilla.CurrentRow.Index).Value()
+        RadioButton1.Checked = grilla.Item(9, grilla.CurrentRow.Index).Value()
+        txt4.Text = grilla.Item(10, grilla.CurrentRow.Index).Value()
+
+        pa_grilla.Visible = False
+        txt1.Enabled = False
 
 
+    End Sub
 
 
 
@@ -305,42 +322,13 @@
         limpiar_ca()
     End Sub
     Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
-        'If Not existe(txt1.Text) Then
-        'For Each row As DataGridViewRow In grilla.Rows
-        '    If Not row.IsNewRow Then
-        '        Me.grilla.Rows.Insert(row.Cells(1).Value(Me.cbp_reg.Text), row.Cells(2).Value(Me.cbp_com.Text), row.Cells(3).Value(Me.txt2.Text))
-        '        'MsgBox(row.Cells(0).Value.ToString & "," & row.Cells(1).Value.ToString)
-        '    Else
-        '        Me.grilla.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
-
-        '    End If
-        'Next
-
-        'If 
-        'End If
-        Me.grilla.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
-
-
-        'Me.grilla.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
-        'For Each row As DataGridViewRow In grilla.Rows
-        '    If Not row.IsNewRow Then
-        '        MsgBox(row.Cells(0).Value.ToString & "," & row.Cells(1).Value.ToString)
-        '    End If
-        'Next
-        'txt1.Text = Me.grilla.Rows.Index.cells(0).value
-        'Else
-        '    MsgBox("ID Vacio no se puede encontrar la propiedad", 16, "Error de ingreso")
-        '    '"Update propiedades"
-        'End If
+        Me.grilla.Refresh()
+        replace()
         limpiar_ca()
     End Sub
     Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
-        If txt1.Text <> "" Then
-            'grilla.Rows.RemoveAt(grilla.da)
-
-
-
-        End If
+        Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+        limpiar_ca()
     End Sub
     Private Sub bt_editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_editar.Click
         'If txt1.Text = "" Then
@@ -354,23 +342,12 @@
     'boton grilla
     Private Sub btg_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btg_vol.Click
         pa_grilla.Hide()
+        txt1.Focus()
     End Sub
 
     'validaciones
 
-    'Private Function existe(val(txt1))
-    '    Dim consulta As Odb.recordset
-    '    Dim mys As String
-    '    mys = "select * from propiedades where id = " & Val(txt1)
-    '    consulta = gdatabase.execute(mys, 0&)
-    '    If consulta.eof Then
-    '        existe = False
-    '        Exit Function
-    '    Else
-    '        existe = True
-    '        Exit Function
-    '    End If
-    'End Function
+   
 
     Private Sub limpiar_ca()
         txt1.Text = ""
@@ -787,31 +764,33 @@
         End Select
     End Sub
 
-
-
-
-
-
-
-   
-
-    Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grilla.CellDoubleClick
-        txt1.Text = grilla.Item(0, grilla.CurrentRow.Index).Value()
-        cbp_reg.Text = grilla.Item(1, grilla.CurrentRow.Index).Value()
-        cbp_com.Text = grilla.Item(2, grilla.CurrentRow.Index).Value()
-        txt2.Text = grilla.Item(3, grilla.CurrentRow.Index).Value()
-        txt3.Text = grilla.Item(4, grilla.CurrentRow.Index).Value()
-        txt5.Text = grilla.Item(5, grilla.CurrentRow.Index).Value()
-        txt12.Text = grilla.Item(6, grilla.CurrentRow.Index).Value()
-        cbp_op.Text = grilla.Item(7, grilla.CurrentRow.Index).Value()
-        cbp_tip.Text = grilla.Item(8, grilla.CurrentRow.Index).Value()
-        RadioButton1.Checked = grilla.Item(9, grilla.CurrentRow.Index).Value()
-        txt4.Text = grilla.Item(10, grilla.CurrentRow.Index).Value()
-
-        pa_grilla.Visible = False
-        txt1.Enabled = False
-
-
+    Private Sub replace()
+        Dim Codigo As String
+        For Each row As DataGridViewRow In Me.grilla.Rows
+            'obtenemos el valor de la columna en la variable declarada
+            Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
+            If Codigo = txt1.Text Then
+                Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+                row.Cells(0).Value = Codigo
+                row.Cells(1).Value =
+                row.Cells(2).Value = txt2.Text
+                row.Cells(3).Value = txt3.Text
+                row.Cells(4).Value = txt4.Text
+                row.Cells(5).Value = txt5.Text
+                row.Cells(6).Value =
+                row.Cells(7).Value = txt6.Text
+                row.Cells(8).Value = txt9.Text
+                row.Cells(9).Value = cb3.Text
+                row.Cells(10).Value = cb2.Text
+                row.Cells(11).Value = txt7.Text
+                row.Cells(12).Value = txt8.Text
+            End If
+        Next
+        Me.grilla.Rows.Add(Me.txt1.Text, Me.cbp_reg.Text, Me.cbp_com.Text, Me.txt2.Text, Me.txt3.Text, Me.txt5.Text, Me.txt12.Text, Me.cbp_op.Text, Me.cbp_tip.Text, Me.RadioButton1.Checked, Me.txt4.Text)
     End Sub
+
+
+
+    
 
 End Class

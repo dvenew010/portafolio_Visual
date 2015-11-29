@@ -162,20 +162,57 @@
     '' BOTONES 
 
     Private Sub bt_gra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_gra.Click
-        Me.grilla.Refresh()
-        'Me.grilla.Rows.Add(Me.txt1.Text, Me.txtt1.Text, Me.txt2.Text, Me.txt3.Text, Me.txt4.Text, Me.txt5.Text, Me.cb1.Text, Me.txt6.Text, Me.txt9.Text, Me.cb3.Text, Me.cb2.Text, Me.txt7.Text, Me.txt8.Text)
-        replace()
         
-
-
-        'Me.grilla.Rows.Add(Me.txt1.Text, Me.txtt1.Text, Me.txt2.Text, Me.txt3.Text, Me.txt4.Text, Me.txt5.Text, Me.cb1.Text, Me.txt6.Text, Me.txt9.Text, Me.cb3.Text, Me.cb2.Text, Me.txt7.Text, Me.txt8.Text)
+        If Not IsNumeric(txt1.Text) Then
+            MsgBox("Rut no valido no se puede agregar", 16, "Error de ingreso")
+            txt1.Focus()
+        Else
+            'replace()
+        End If
+    End Sub
+    Private Sub bt_elim_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_elim.Click
+        Me.grilla.Refresh()
+        If txt1.Text = "" Then
+            MsgBox("Rut no valido no se puede eliminar", 16, "Error de ingreso")
+        Else
+            delete()
+        End If
         Limpiar_campos()
+    End Sub
+    Private Sub bt_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_edit.Click
+        Me.grilla.Refresh()
+        pa_grilla.Visible = True
+        txt1.Focus()
+    End Sub
+    Private Sub bt_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_vol.Click
+        Me.Hide()
+        Form1.Enabled = True
+    End Sub
+    Private Sub bt_anu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_anu.Click
+        Limpiar_campos()
+    End Sub
+    Private Sub btg_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btg_vol.Click
+        pa_grilla.Hide()
+        Limpiar_campos()
+    End Sub
 
+
+
+
+    '' VALIDACIONES
+    Private Sub delete()
+        Dim Codigo As String
+            For Each row As DataGridViewRow In Me.grilla.Rows
+                'obtenemos el valor de la columna en la variable declarada
+                Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer            
+                If Codigo = txt1.Text Then
+                    Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
+                End If
+        Next
     End Sub
 
     Private Sub replace()
         Dim Codigo, mmm, mmm1 As String
-
         For Each row As DataGridViewRow In Me.grilla.Rows
             'obtenemos el valor de la columna en la variable declarada
             Codigo = row.Cells(0).Value 'donde (0) es la columna a recorrer
@@ -183,7 +220,6 @@
             mmm1 = row.Cells(6).Value
             If Codigo = txt1.Text Then
                 Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
-                Me.grilla.Rows.Add(Codigo, mmm, txt2.Text, txt3.Text, txt4.Text, txt5.TextMe.cb1.Text, Me.txt6.Text, Me.txt9.Text, Me.cb3.Text, Me.cb2.Text, Me.txt7.Text, Me.txt8.Text)
                 row.Cells(0).Value = Codigo
                 row.Cells(1).Value = mmm
                 row.Cells(2).Value = txt2.Text
@@ -197,39 +233,10 @@
                 row.Cells(10).Value = cb2.Text
                 row.Cells(11).Value = txt7.Text
                 row.Cells(12).Value = txt8.Text
-
-            Else
-                'insert into cliente Values(txt1.text+"-"+txtt1.text,txt2.text,txt3.text,txt4.text,txt5.text,cb1.text,txt6.text,txt9.text,cb3.text,cb2.text,txt7.text,txt8.text)
-                '0 rut, 1 dv, 2 nombre, 3 pterno, 4 materno, 5 nacimineto, 6 sexo, 7 correo, 8 pass, 
-                '9 Region, 10 comuna, 11 direccion, 12 telefono
-                Me.grilla.Rows.Add(Me.txt1.Text, Me.txtt1.Text, Me.txt2.Text, Me.txt3.Text, Me.txt4.Text, Me.txt5.Text, Me.cb1.Text, Me.txt6.Text, Me.txt9.Text, Me.cb3.Text, Me.cb2.Text, Me.txt7.Text, Me.txt8.Text)
             End If
-
         Next
+        Me.grilla.Rows.Add(Me.txt1.Text, Me.txtt1.Text, Me.txt2.Text, Me.txt3.Text, Me.txt4.Text, Me.txt5.Text, Me.cb1.Text, Me.txt6.Text, Me.txt9.Text, Me.cb3.Text, Me.cb2.Text, Me.txt7.Text, Me.txt8.Text)
     End Sub
-    Private Sub bt_elim_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_elim.Click
-        Me.grilla.Rows.RemoveAt(Me.grilla.CurrentRow.Index)
-        Limpiar_campos()
-
-    End Sub
-    Private Sub bt_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_edit.Click
-        pa_grilla.Visible = True
-    End Sub
-    Private Sub bt_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_vol.Click
-        Me.Hide()
-        Form1.Enabled = True
-    End Sub
-    Private Sub bt_anu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_anu.Click
-        Limpiar_campos()
-    End Sub
-    Private Sub btg_vol_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btg_vol.Click
-        pa_grilla.Hide()
-    End Sub
-
-
-
-
-    '' VALIDACIONES
 
     Private Sub grilla_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grilla.CellDoubleClick
         txt1.Text = grilla.Item(0, grilla.CurrentRow.Index).Value()
@@ -249,18 +256,6 @@
         txtt1.Enabled = False
         cb1.Enabled = False
         pa_grilla.Visible = False
-    End Sub
-
-    Public Sub inhabilita()
-        txt1.ReadOnly = True
-        txtt1.ReadOnly = True
-        cb1.Enabled = False
-    End Sub
-
-    Public Sub habilita()
-        txt1.ReadOnly = False
-        txtt1.ReadOnly = False
-        cb1.Enabled = True
     End Sub
 
     Private Sub Valida_datos()
