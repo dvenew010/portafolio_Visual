@@ -27,13 +27,13 @@ Partial Class acceso
         Me.MANTENEDORToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pacceso = New System.Windows.Forms.Panel()
+        Me.bt_sal = New System.Windows.Forms.Button()
         Me.txt2 = New System.Windows.Forms.TextBox()
         Me.btn = New System.Windows.Forms.Button()
         Me.txt1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.bt_sal = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.pacceso.SuspendLayout()
         Me.SuspendLayout()
@@ -73,13 +73,23 @@ Partial Class acceso
         Me.pacceso.Size = New System.Drawing.Size(591, 280)
         Me.pacceso.TabIndex = 2
         '
+        'bt_sal
+        '
+        Me.bt_sal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_sal.Location = New System.Drawing.Point(339, 218)
+        Me.bt_sal.Name = "bt_sal"
+        Me.bt_sal.Size = New System.Drawing.Size(160, 35)
+        Me.bt_sal.TabIndex = 4
+        Me.bt_sal.Text = "ANULAR"
+        Me.bt_sal.UseVisualStyleBackColor = True
+        '
         'txt2
         '
         Me.txt2.Location = New System.Drawing.Point(263, 163)
         Me.txt2.Name = "txt2"
         Me.txt2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt2.Size = New System.Drawing.Size(181, 20)
-        Me.txt2.TabIndex = 7
+        Me.txt2.TabIndex = 2
         '
         'btn
         '
@@ -87,7 +97,7 @@ Partial Class acceso
         Me.btn.Location = New System.Drawing.Point(143, 220)
         Me.btn.Name = "btn"
         Me.btn.Size = New System.Drawing.Size(174, 34)
-        Me.btn.TabIndex = 5
+        Me.btn.TabIndex = 3
         Me.btn.Text = "ACCEDER"
         Me.btn.UseVisualStyleBackColor = True
         '
@@ -96,7 +106,7 @@ Partial Class acceso
         Me.txt1.Location = New System.Drawing.Point(262, 113)
         Me.txt1.Name = "txt1"
         Me.txt1.Size = New System.Drawing.Size(182, 20)
-        Me.txt1.TabIndex = 3
+        Me.txt1.TabIndex = 1
         '
         'Label3
         '
@@ -127,16 +137,6 @@ Partial Class acceso
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "USUARIO"
-        '
-        'bt_sal
-        '
-        Me.bt_sal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_sal.Location = New System.Drawing.Point(339, 218)
-        Me.bt_sal.Name = "bt_sal"
-        Me.bt_sal.Size = New System.Drawing.Size(160, 35)
-        Me.bt_sal.TabIndex = 8
-        Me.bt_sal.Text = "ANULAR"
-        Me.bt_sal.UseVisualStyleBackColor = True
         '
         'acceso
         '

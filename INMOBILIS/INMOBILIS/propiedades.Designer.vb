@@ -271,7 +271,7 @@ Partial Class propiedades
         Me.bt_grabar.Location = New System.Drawing.Point(21, 19)
         Me.bt_grabar.Name = "bt_grabar"
         Me.bt_grabar.Size = New System.Drawing.Size(81, 42)
-        Me.bt_grabar.TabIndex = 9
+        Me.bt_grabar.TabIndex = 56
         Me.bt_grabar.Text = "GRABAR"
         Me.bt_grabar.UseVisualStyleBackColor = True
         '
@@ -402,16 +402,16 @@ Partial Class propiedades
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label18)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Controls.Add(Me.cbp_com)
         Me.Panel1.Controls.Add(Me.cbp_op)
         Me.Panel1.Controls.Add(Me.cbp_tip)
         Me.Panel1.Controls.Add(Me.cbp_reg)
         Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.txt1)
         Me.Panel1.Location = New System.Drawing.Point(24, 133)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(479, 295)
-        Me.Panel1.TabIndex = 50
+        Me.Panel1.TabIndex = 1
         '
         'txxtt1
         '
@@ -821,7 +821,7 @@ Partial Class propiedades
         Me.txt8.Location = New System.Drawing.Point(683, 111)
         Me.txt8.Name = "txt8"
         Me.txt8.Size = New System.Drawing.Size(53, 20)
-        Me.txt8.TabIndex = 52
+        Me.txt8.TabIndex = 55
         '
         'txt7
         '

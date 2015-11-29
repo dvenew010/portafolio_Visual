@@ -65,7 +65,7 @@
         cbp_reg.Items.Add("XIV MAGALLANES")
         cbp_reg.Items.Add("XV METROPOLITANA")
 
-        Panel1.txt1.Focus()
+        txt1.Focus()
 
     End Sub
 
@@ -405,6 +405,8 @@
         pca.Visible = False
         ped.Visible = False
         txt1.Focus()
+        txt7.Visible = False
+        txt8.Visible = False
     End Sub
 
     Private Sub regiones_comunas()
