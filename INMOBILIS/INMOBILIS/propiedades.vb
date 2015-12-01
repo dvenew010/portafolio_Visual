@@ -197,6 +197,8 @@
                         pca.Visible = False
                         ped.Visible = False
                         txt9.Focus()
+                        txt7.Visible = False
+                        txt8.Visible = False
 
                     Case "OFICINA"
                         pof.Visible = True
@@ -205,6 +207,8 @@
                         ped.Visible = False
                         pbo.Visible = False
                         txt10.Focus()
+                        txt7.Visible = False
+                        txt8.Visible = False
 
                     Case "ESTACIONAMIENTO"
                         pes.Visible = True
@@ -213,6 +217,8 @@
                         ped.Visible = False
                         pbo.Visible = False
                         txt11.Focus()
+                        txt7.Visible = False
+                        txt8.Visible = False
 
                     Case "CASA"
                         pca.Visible = True
@@ -325,6 +331,67 @@
         txtt3.Text = grillap.Item(11, grillap.CurrentRow.Index).Value()
         txt4.Text = grillap.Item(12, grillap.CurrentRow.Index).Value()
         cbp_tip.Text = grillap.Item(13, grillap.CurrentRow.Index).Value()
+        Select Case cbp_tip.Text
+            Case "CASA"
+                txt6.Text = grillap.Item(14, grillap.CurrentRow.Index).Value()
+                txt7.Text = grillap.Item(15, grillap.CurrentRow.Index).Value()
+                txt8.Text = grillap.Item(16, grillap.CurrentRow.Index).Value()
+                pca.Visible = True
+                pes.Visible = False
+                pof.Visible = False
+                ped.Visible = False
+                pbo.Visible = False
+                txt7.Visible = True
+                txt8.Visible = True
+                txxtt1.Focus()
+
+            Case "DEPARTAMENTO"
+                txt13.Text = grillap.Item(17, grillap.CurrentRow.Index).Value()
+                txt7.Text = grillap.Item(15, grillap.CurrentRow.Index).Value()
+                txt8.Text = grillap.Item(16, grillap.CurrentRow.Index).Value()
+                ped.Visible = True
+                pes.Visible = False
+                pca.Visible = False
+                pof.Visible = False
+                pbo.Visible = False
+                txt7.Visible = True
+                txt8.Visible = True
+                txxtt1.Focus()
+
+            Case "OFICINA"
+                txt10.Text = grillap.Item(18, grillap.CurrentRow.Index).Value()
+                pof.Visible = True
+                pes.Visible = False
+                pca.Visible = False
+                ped.Visible = False
+                pbo.Visible = False
+                txt7.Visible = False
+                txt8.Visible = False
+                txxtt1.Focus()
+
+            Case "ESTACIONAMIENTO"
+                txt11.Text = grillap.Item(20, grillap.CurrentRow.Index).Value()
+                pes.Visible = True
+                pof.Visible = False
+                pca.Visible = False
+                ped.Visible = False
+                pbo.Visible = False
+                txt7.Visible = False
+                txt8.Visible = False
+                txxtt1.Focus()
+
+            Case "BODEGA"
+                txt9.Text = grillap.Item(19, grillap.CurrentRow.Index).Value()
+                pbo.Visible = True
+                pof.Visible = False
+                pes.Visible = False
+                pca.Visible = False
+                ped.Visible = False
+                txt7.Visible = False
+                txt8.Visible = False
+                txxtt1.Focus()
+
+        End Select
 
         pa_grilla.Visible = False
         txt1.Enabled = False
