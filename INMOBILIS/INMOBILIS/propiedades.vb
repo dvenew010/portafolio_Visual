@@ -367,7 +367,7 @@
                 pbo.Visible = False
                 txt7.Visible = True
                 txt8.Visible = True
-                txxtt1.Focus()
+                txxt1.Focus()
 
             Case "DEPARTAMENTO"
                 txt13.Text = grillap.Item(17, grillap.CurrentRow.Index).Value()
@@ -380,7 +380,7 @@
                 pbo.Visible = False
                 txt7.Visible = True
                 txt8.Visible = True
-                txxtt1.Focus()
+                txxt1.Focus()
 
             Case "OFICINA"
                 txt10.Text = grillap.Item(18, grillap.CurrentRow.Index).Value()
@@ -391,7 +391,7 @@
                 pbo.Visible = False
                 txt7.Visible = False
                 txt8.Visible = False
-                txxtt1.Focus()
+                txxt1.Focus()
 
             Case "ESTACIONAMIENTO"
                 txt11.Text = grillap.Item(20, grillap.CurrentRow.Index).Value()
@@ -402,7 +402,7 @@
                 pbo.Visible = False
                 txt7.Visible = False
                 txt8.Visible = False
-                txxtt1.Focus()
+                txxt1.Focus()
 
             Case "BODEGA"
                 txt9.Text = grillap.Item(19, grillap.CurrentRow.Index).Value()
@@ -413,7 +413,7 @@
                 ped.Visible = False
                 txt7.Visible = False
                 txt8.Visible = False
-                txxtt1.Focus()
+                txxt1.Focus()
 
         End Select
 
@@ -438,7 +438,7 @@
     Private Sub bt_grabar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_grabar.Click
         Me.grillap.Refresh()
         If txt1.Text = "" Then
-            MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
+            MsgBox("Debe ingresar el ID de la propiedad para grabar propiedad", 16, "Error de ingreso")
         Else
             replacepro()
         End If
@@ -446,7 +446,7 @@
     End Sub
     Private Sub bt_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_eliminar.Click
         If txt1.Text = "" Then
-            MsgBox("Debe ingresar Valor numerico", 16, "Error de ingreso")
+            MsgBox("Debe ingresar el ID de la propiedad para eliminar propiedad", 16, "Error de ingreso")
         Else
             deletepro()
         End If

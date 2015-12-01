@@ -23,7 +23,7 @@ Partial Class cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cliente))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tx_fe = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.bt_anu = New System.Windows.Forms.Button()
@@ -62,6 +62,7 @@ Partial Class cliente
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pa_grilla = New System.Windows.Forms.Panel()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.btg_vol = New System.Windows.Forms.Button()
         Me.grilla = New System.Windows.Forms.DataGridView()
         Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -297,6 +298,7 @@ Partial Class cliente
         Me.cb1.FormattingEnabled = True
         Me.cb1.Items.AddRange(New Object() {"F", "M"})
         Me.cb1.Location = New System.Drawing.Point(106, 160)
+        Me.cb1.MaxLength = 1
         Me.cb1.Name = "cb1"
         Me.cb1.Size = New System.Drawing.Size(53, 21)
         Me.cb1.TabIndex = 7
@@ -447,16 +449,27 @@ Partial Class cliente
         'pa_grilla
         '
         Me.pa_grilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pa_grilla.Controls.Add(Me.Label24)
         Me.pa_grilla.Controls.Add(Me.btg_vol)
         Me.pa_grilla.Controls.Add(Me.grilla)
-        Me.pa_grilla.Location = New System.Drawing.Point(583, 193)
+        Me.pa_grilla.Location = New System.Drawing.Point(574, 136)
         Me.pa_grilla.Name = "pa_grilla"
-        Me.pa_grilla.Size = New System.Drawing.Size(620, 300)
+        Me.pa_grilla.Size = New System.Drawing.Size(620, 350)
         Me.pa_grilla.TabIndex = 51
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(152, 26)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(307, 13)
+        Me.Label24.TabIndex = 3
+        Me.Label24.Text = "SELECCIONE CON DOBLE CLICK PARA MODIFICAR"
         '
         'btg_vol
         '
-        Me.btg_vol.Location = New System.Drawing.Point(450, 18)
+        Me.btg_vol.Location = New System.Drawing.Point(266, 302)
         Me.btg_vol.Name = "btg_vol"
         Me.btg_vol.Size = New System.Drawing.Size(79, 27)
         Me.btg_vol.TabIndex = 1
@@ -507,9 +520,9 @@ Partial Class cliente
         '
         'nacimiento
         '
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.nacimiento.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Format = "d"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.nacimiento.DefaultCellStyle = DataGridViewCellStyle1
         Me.nacimiento.HeaderText = "NACIMIENTO"
         Me.nacimiento.Name = "nacimiento"
         Me.nacimiento.ReadOnly = True
@@ -581,6 +594,7 @@ Partial Class cliente
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.pa_grilla.ResumeLayout(False)
+        Me.pa_grilla.PerformLayout()
         CType(Me.grilla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -639,4 +653,5 @@ Partial Class cliente
     Friend WithEvents comuna As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents direccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents telefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label24 As System.Windows.Forms.Label
 End Class

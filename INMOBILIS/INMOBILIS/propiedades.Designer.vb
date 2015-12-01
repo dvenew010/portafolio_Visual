@@ -73,12 +73,12 @@ Partial Class propiedades
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt1 = New System.Windows.Forms.TextBox()
         Me.cbp_com = New System.Windows.Forms.ComboBox()
         Me.cbp_op = New System.Windows.Forms.ComboBox()
         Me.cbp_tip = New System.Windows.Forms.ComboBox()
         Me.cbp_reg = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.txt1 = New System.Windows.Forms.TextBox()
         Me.pa_grilla = New System.Windows.Forms.Panel()
         Me.btg_vol = New System.Windows.Forms.Button()
         Me.grillap = New System.Windows.Forms.DataGridView()
@@ -105,6 +105,7 @@ Partial Class propiedades
         Me.nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt8 = New System.Windows.Forms.TextBox()
         Me.txt7 = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.ped.SuspendLayout()
         Me.pca.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -606,13 +607,6 @@ Partial Class propiedades
         Me.Label7.TabIndex = 100
         Me.Label7.Text = "TIPO PROPIEDAD"
         '
-        'txt1
-        '
-        Me.txt1.Location = New System.Drawing.Point(140, 11)
-        Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(70, 20)
-        Me.txt1.TabIndex = 1
-        '
         'cbp_com
         '
         Me.cbp_com.FormattingEnabled = True
@@ -656,19 +650,27 @@ Partial Class propiedades
         Me.Label19.TabIndex = 109
         Me.Label19.Text = "REGION"
         '
+        'txt1
+        '
+        Me.txt1.Location = New System.Drawing.Point(140, 11)
+        Me.txt1.Name = "txt1"
+        Me.txt1.Size = New System.Drawing.Size(70, 20)
+        Me.txt1.TabIndex = 1
+        '
         'pa_grilla
         '
         Me.pa_grilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pa_grilla.Controls.Add(Me.Label24)
         Me.pa_grilla.Controls.Add(Me.btg_vol)
         Me.pa_grilla.Controls.Add(Me.grillap)
-        Me.pa_grilla.Location = New System.Drawing.Point(24, 509)
+        Me.pa_grilla.Location = New System.Drawing.Point(24, 442)
         Me.pa_grilla.Name = "pa_grilla"
-        Me.pa_grilla.Size = New System.Drawing.Size(620, 300)
+        Me.pa_grilla.Size = New System.Drawing.Size(620, 350)
         Me.pa_grilla.TabIndex = 51
         '
         'btg_vol
         '
-        Me.btg_vol.Location = New System.Drawing.Point(450, 18)
+        Me.btg_vol.Location = New System.Drawing.Point(235, 301)
         Me.btg_vol.Name = "btg_vol"
         Me.btg_vol.Size = New System.Drawing.Size(79, 27)
         Me.btg_vol.TabIndex = 1
@@ -830,6 +832,16 @@ Partial Class propiedades
         Me.txt7.Size = New System.Drawing.Size(53, 20)
         Me.txt7.TabIndex = 54
         '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(148, 26)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(307, 13)
+        Me.Label24.TabIndex = 3
+        Me.Label24.Text = "SELECCIONE CON DOBLE CLICK PARA MODIFICAR"
+        '
         'propiedades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -868,6 +880,7 @@ Partial Class propiedades
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.pa_grilla.ResumeLayout(False)
+        Me.pa_grilla.PerformLayout()
         CType(Me.grillap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -955,4 +968,5 @@ Partial Class propiedades
     Friend WithEvents nivel As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txt8 As System.Windows.Forms.TextBox
     Friend WithEvents txt7 As System.Windows.Forms.TextBox
+    Friend WithEvents Label24 As System.Windows.Forms.Label
 End Class
