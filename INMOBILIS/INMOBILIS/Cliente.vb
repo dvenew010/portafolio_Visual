@@ -26,7 +26,7 @@
         cb3.Items.Add("XIV MAGALLANES")
         cb3.Items.Add("XV METROPOLITANA")
 
-        Me.grilla.Rows.Add("17415666", "2", "DANIEL", "VERDUGO", "GALLEGOS", "14/01/1990", "M", "DVENEW.010@GMAIL.COM", "JAJAJA", "XV METROPOLITANA", "LA FLORIDA", "LAS CLAVELINAS #2078", 77070720)
+        Me.grilla.Rows.Add(17415666, "2", "DANIEL", "VERDUGO", "GALLEGOS", "14/01/1990", "M", "DVENEW.010@GMAIL.COM", "JAJAJA", "XV METROPOLITANA", "LA FLORIDA", "LAS CLAVELINAS #2078", 77070720)
 
         pa_grilla.Left = 12
         pa_grilla.Top = 100

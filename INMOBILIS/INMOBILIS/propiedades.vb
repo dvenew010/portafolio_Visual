@@ -49,7 +49,21 @@
         cbp_op.Items.Add("ARRIENDO")
         'llenado de los combobox regiones
         'cbp_reg.items.add()
-        cbp_reg.Items.Add("I ARICA Y PARINACOTA")
+        'De Tarapacá 
+        'De Antofagasta
+        'De Atacama
+        'De Coquimbo
+        'De Valparaíso
+        'Del Libertador B. OHiggins
+        'Del Maule
+        'Del Bíobío
+        'De La Araucanía
+        'De Los Ríos
+        'De Los Lagos
+        'De Aisén del Gral. C. Ibáñez del Campo
+        'De Magallanes y de La Antártica Chilena
+        'Metropolitana de Santiago
+        cbp_reg.Items.Add("I ARICA")
         cbp_reg.Items.Add("II TARAPACÁ")
         cbp_reg.Items.Add("III ANTOFAGASTA")
         cbp_reg.Items.Add("IV ATACAMA")
@@ -64,6 +78,16 @@
         cbp_reg.Items.Add("XIII AISÉN")
         cbp_reg.Items.Add("XIV MAGALLANES")
         cbp_reg.Items.Add("XV METROPOLITANA")
+        cb_cons.Items.Add("CONSTRUMART")
+        cb_cons.Items.Add("LOLCOMPANY")
+
+        'Me.grillap.Rows.Add(ID,RUT,DV, REGION, COMUNA, DIRECCION,                      CONSTRUCTORA, PRECIO, M2, DISPONIBLE, OPERACION, PROYECTO, DESCRIPCION, TIPO, CONJUNTO, DORMITORIOS, BAÑOS, EDIFICIO, N°PATENTE, ALTURA, NIVEL)
+        Me.grillap.Rows.Add(1, 14603902, 2, "XV METROPOLITANA", "RENCA", "LAS ENCINAS 16", "CONSTRUMART", 200, 10, True, "VENTA", "JAJADUE", Me.txt4.Text, "CASA", "DOMINICA", 2, 3, "", "", "", "")
+        Me.grillap.Rows.Add(2, 14603902, 2, "XII LOS LAGOS", "RIO NEGRO", "LAKSDJALSK 1216", "LOLCOMPANY", 5200, 1000, False, "ARRIENDO", "LAS ACACIAS", Me.txt4.Text, "DEPARTAMENTO", "", 2, 5, "DON TRIZTAN", "", "", "")
+        Me.grillap.Rows.Add(3, 14603902, 2, "X LA ARAUCANÍA", "NUEVA IMPERIAL", "IMQQ CALLE ASLKDJAS", "CONSTRUMART", 1000, 200, True, "ARRIENDO", "CALLE 90N7XYT65O", Me.txt4.Text, "OFICINA", "", "", "", "", 1234, "", "")
+        Me.grillap.Rows.Add(4, 14603902, 2, "IX BIOBÍO", "QUILACO", "CALLE ALLADODELAOTRA 1541", "LOLCOMPANY", 9000, 1200, True, "VENTA", "AVENIDA 90N7XYT65O", Me.txt4.Text, "BODEGA", "", "", "", "", "", 1.5, "")
+        Me.grillap.Rows.Add(5, 14603902, 2, "VIII MAULE", "LONGAVI", "SEGOVIA11111", "LOLCOMPANY", 200, 100, True, "VENTA", "LOTEO 90N7XYT65O", Me.txt4.Text, "ESTACIONAMIENTO", "", "", "", "", "", "", -1)
+
 
         txt1.Focus()
 
